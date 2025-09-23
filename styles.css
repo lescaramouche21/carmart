@@ -179,6 +179,35 @@ header, section {
 .hero-highlight {
   display: grid;
   gap: 1rem;
+  align-content: start;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.hero-car {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+  background: var(--glass);
+  aspect-ratio: 4 / 3;
+}
+
+.hero-car img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-car figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(180deg, rgba(6, 16, 23, 0) 0%, rgba(6, 16, 23, 0.8) 100%);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
 }
 
 .stat-card {
