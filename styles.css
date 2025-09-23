@@ -1,6 +1,6 @@
 :root {
   --bg: #0b1d26;
-  --accent: #ffce00;
+  --accent: #3bba9c;
   --accent-2: #007f4f;
   --text: #f5f7fa;
   --muted: rgba(245, 247, 250, 0.7);
@@ -42,7 +42,7 @@ header, section {
 .hero {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, rgba(0, 127, 79, 0.6), rgba(255, 206, 0, 0.3)),
+  background: linear-gradient(135deg, rgba(0, 127, 79, 0.6), rgba(59, 186, 156, 0.35)),
     url('https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1600&q=80')
       center/cover;
   backdrop-filter: blur(6px);
@@ -105,7 +105,7 @@ header, section {
 }
 
 .cta {
-  background: linear-gradient(135deg, var(--accent), #ff7a00);
+  background: linear-gradient(135deg, var(--accent), #1f9c85);
   color: #061017;
   border: none;
   padding: 0.75rem 1.75rem;
@@ -113,12 +113,12 @@ header, section {
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 15px 30px rgba(255, 206, 0, 0.25);
+  box-shadow: 0 15px 30px rgba(59, 186, 156, 0.25);
 }
 
 .cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(255, 206, 0, 0.3);
+  box-shadow: 0 18px 40px rgba(59, 186, 156, 0.3);
 }
 
 .cta.full {
@@ -138,7 +138,7 @@ header, section {
 }
 
 .secondary:hover {
-  background: rgba(255, 206, 0, 0.12);
+  background: rgba(59, 186, 156, 0.12);
   transform: translateY(-2px);
 }
 
@@ -228,7 +228,7 @@ header, section {
   display: grid;
   gap: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  background: linear-gradient(135deg, rgba(0, 127, 79, 0.15), rgba(255, 206, 0, 0.08));
+  background: linear-gradient(135deg, rgba(0, 127, 79, 0.15), rgba(59, 186, 156, 0.12));
 }
 
 .credibility h2 {
@@ -266,8 +266,8 @@ header, section {
   padding: 2.5rem;
   border-radius: 1.5rem;
   border: 1px dashed var(--accent);
-  background: radial-gradient(circle, rgba(255, 206, 0, 0.12), transparent 60%);
-  box-shadow: inset 0 0 40px rgba(255, 206, 0, 0.1);
+  background: radial-gradient(circle, rgba(59, 186, 156, 0.15), transparent 60%);
+  box-shadow: inset 0 0 40px rgba(59, 186, 156, 0.1);
 }
 
 .badge-inner span {
@@ -354,8 +354,8 @@ header, section {
 }
 
 .badge {
-  background: rgba(0, 127, 79, 0.2);
-  color: #63ffb0;
+  background: rgba(59, 186, 156, 0.18);
+  color: #d0f9ec;
   padding: 0.3rem 0.75rem;
   border-radius: 999px;
   font-size: 0.75rem;
@@ -388,7 +388,7 @@ header, section {
 }
 
 .card-footer button:hover {
-  background: rgba(255, 206, 0, 0.15);
+  background: rgba(59, 186, 156, 0.15);
 }
 
 .sell {
@@ -469,7 +469,7 @@ header, section {
 .message-form input:focus,
 .message-form textarea:focus,
 .message-form select:focus {
-  outline: 2px solid rgba(255, 206, 0, 0.4);
+  outline: 2px solid rgba(59, 186, 156, 0.4);
   outline-offset: 2px;
 }
 
@@ -483,7 +483,7 @@ header, section {
   display: grid;
   gap: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  background: linear-gradient(140deg, rgba(255, 206, 0, 0.08), rgba(0, 127, 79, 0.15));
+  background: linear-gradient(140deg, rgba(59, 186, 156, 0.12), rgba(0, 127, 79, 0.15));
 }
 
 .message-info h2 {
@@ -546,7 +546,7 @@ header, section {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: rgba(0, 127, 79, 0.95);
+  background: rgba(59, 186, 156, 0.95);
   color: var(--text);
   padding: 1rem 1.5rem;
   border-radius: 0.75rem;
