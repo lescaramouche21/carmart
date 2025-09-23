@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarMart Suriname | Premium Car Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="hero">
+      <nav class="navbar">
+        <div class="logo">CarMart Suriname</div>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#verified">Verification</a></li>
+          <li><a href="#listings">Marketplace</a></li>
+          <li><a href="#sell">Sell Your Car</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="cta" data-scroll="#sell">List your car</button>
+      </nav>
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="flag">🇸🇷</span>
+          <h1>Suriname's most trusted car marketplace.</h1>
+          <p>
+            Discover verified vehicles from proud owners across the country.
+            CarMart Suriname combines secure ID checks with an elegant browsing
+            experience so buyers and sellers can connect confidently.
+          </p>
+          <div class="hero-actions">
+            <button class="cta" data-scroll="#listings">Browse cars</button>
+            <button class="secondary" data-scroll="#sell">Sell your car</button>
+          </div>
+        </div>
+        <div class="hero-highlight">
+          <div class="stat-card">
+            <h2>100%</h2>
+            <p>Verified sellers with ID approval</p>
+          </div>
+          <div class="stat-card">
+            <h2>48h</h2>
+            <p>Average approval time</p>
+          </div>
+          <div class="stat-card">
+            <h2>4.9★</h2>
+            <p>Community satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="credibility" id="verified">
+        <div class="credibility-content">
+          <h2>Every seller is personally verified.</h2>
+          <p>
+            Before any listing goes live, our team reviews the seller's national
+            ID to ensure authenticity. Suriname regulations empower us to
+            validate every submission, keeping the marketplace safe and
+            trustworthy.
+          </p>
+          <ul class="pillars">
+            <li>
+              <h3>Secure ID uploads</h3>
+              <p>Protected, encrypted submissions reviewed in-house.</p>
+            </li>
+            <li>
+              <h3>Personal concierge</h3>
+              <p>A dedicated specialist guides sellers from verification to sale.</p>
+            </li>
+            <li>
+              <h3>Buyer confidence</h3>
+              <p>Verified badges and transparent history on every vehicle.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="credibility-badge">
+          <div class="badge-inner">
+            <span>Verified</span>
+            <strong>CarMart Certified</strong>
+            <p>Trusted in Paramaribo & beyond</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="listings" id="listings">
+        <div class="section-header">
+          <div>
+            <h2>Featured rides ready for the road.</h2>
+            <p>Hand-picked vehicles from approved Surinamese owners.</p>
+          </div>
+          <div class="filters">
+            <label>
+              <span>Filter by price (SRD)</span>
+              <input type="range" id="priceFilter" min="0" max="250000" value="250000" />
+            </label>
+            <span class="price-value">Up to SRD <strong id="priceValue">250,000</strong></span>
+          </div>
+        </div>
+        <div class="cards" id="carGrid"></div>
+      </section>
+
+      <section class="sell" id="sell">
+        <div class="sell-intro">
+          <h2>Ready to sell? Start with ID verification.</h2>
+          <p>
+            Submit your Surinamese ID for a swift review. Once approved, your
+            listing goes live across the country within minutes. Expect a member
+            of the CarMart concierge team to follow up and help you craft the
+            perfect listing.
+          </p>
+          <div class="steps">
+            <div class="step">
+              <span>01</span>
+              <h3>Submit ID</h3>
+              <p>Upload a clear photo of your national ID for approval.</p>
+            </div>
+            <div class="step">
+              <span>02</span>
+              <h3>Create listing</h3>
+              <p>Share your car's details, photos, and desired price.</p>
+            </div>
+            <div class="step">
+              <span>03</span>
+              <h3>Connect with buyers</h3>
+              <p>Receive secure messages directly from interested buyers.</p>
+            </div>
+          </div>
+        </div>
+        <form class="sell-form" id="sellForm">
+          <h3>List your vehicle</h3>
+          <label>
+            Full name
+            <input type="text" name="name" placeholder="Your full name" required />
+          </label>
+          <label>
+            Email address
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Phone number
+            <input type="tel" name="phone" placeholder="(+597) 000-0000" required />
+          </label>
+          <label>
+            ID document (front)
+            <input type="file" name="idFront" accept="image/*,application/pdf" required />
+          </label>
+          <label>
+            ID document (back)
+            <input type="file" name="idBack" accept="image/*,application/pdf" required />
+          </label>
+          <label>
+            Vehicle make & model
+            <input type="text" name="model" placeholder="Toyota Hilux" required />
+          </label>
+          <label>
+            Year
+            <input type="number" name="year" min="1980" max="2030" required />
+          </label>
+          <label>
+            Price (SRD)
+            <input type="number" name="price" min="0" step="500" required />
+          </label>
+          <label>
+            Description
+            <textarea name="description" rows="4" placeholder="Tell buyers why this ride is special" required></textarea>
+          </label>
+          <label>
+            Upload car photos
+            <input type="file" name="photos" accept="image/*" multiple />
+          </label>
+          <button type="submit" class="cta full">Submit for verification</button>
+          <p class="form-disclaimer">
+            By submitting, you authorize CarMart Suriname to review your ID in
+            compliance with Surinamese regulations. Your data remains encrypted
+            and never leaves our secure servers.
+          </p>
+        </form>
+      </section>
+
+      <section class="message" id="contact">
+        <div class="message-info">
+          <h2>Buyers can message sellers instantly.</h2>
+          <p>
+            Interested in a vehicle? Send a secure message to the seller and our
+            system notifies them while masking your private contact details until
+            they respond.
+          </p>
+          <ul class="message-highlights">
+            <li>Built-in translation support for Dutch & Sranan Tongo.</li>
+            <li>Automatic safety screening of every message.</li>
+            <li>Reply from any device without sharing your number.</li>
+          </ul>
+        </div>
+        <form class="message-form" id="messageForm">
+          <h3>Message a seller</h3>
+          <label>
+            Your name
+            <input type="text" name="buyerName" placeholder="Your name" required />
+          </label>
+          <label>
+            Your email
+            <input type="email" name="buyerEmail" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Select a vehicle
+            <select name="vehicle" id="vehicleSelect" required></select>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Hi! I'm interested in taking a look." required></textarea>
+          </label>
+          <button type="submit" class="cta full">Send secure message</button>
+          <p class="form-disclaimer">We deliver your message to the verified seller.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <h3>CarMart Suriname</h3>
+          <p>
+            The definitive marketplace for trusted car sales across Suriname.
+            Built locally for our community.
+          </p>
+        </div>
+        <div>
+          <h4>Visit us</h4>
+          <p>Hendrikstraat 12, Paramaribo</p>
+          <p>Mon – Sat: 9:00 – 18:00</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:hello@carmartsr.com">hello@carmartsr.com</a>
+          <a href="tel:+5971234567">(+597) 123-4567</a>
+        </div>
+      </div>
+      <p class="footer-note">© <span id="year"></span> CarMart Suriname. All rights reserved.</p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
