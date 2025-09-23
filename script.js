@@ -1,15 +1,15 @@
 const listings = [
   {
     id: 'car-1',
-    title: 'Toyota Hilux Adventure',
-    price: 52500,
-    year: 2019,
-    mileage: '45,000 km',
+    title: 'Toyota Vitz Comfort',
+    price: 2750,
+    year: 2009,
+    mileage: '200.000 km',
     location: 'Paramaribo',
     description:
-      'Double cab, 4x4, fully serviced with maintenance records. Ideal for Suriname terrain.',
+      'Reliable hatchback with fresh maintenance, cold A/C, and great fuel economy for city drives.',
     image:
-      'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1523981080-871d9ab01868?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'car-2',
