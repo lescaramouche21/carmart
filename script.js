@@ -2,7 +2,7 @@ const listings = [
   {
     id: 'car-1',
     title: 'Toyota vitz',
-    price: 1é&000,
+    price: 121000,
     year: 2009,
     mileage: '200,000 km',
     location: 'Paramaribo',
