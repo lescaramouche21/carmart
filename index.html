@@ -8,230 +8,343 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="hero" id="hero">
-      <nav class="navbar">
-        <div class="logo" aria-label="CarSpot logo">
-          <span class="logo-mark" aria-hidden="true">
-            <span class="logo-flare"></span>
-            <span class="logo-ring"></span>
+      <nav class="navbar wrapper">
+        <a class="brand" href="#hero">
+          <span class="brand-mark" aria-hidden="true">CS</span>
+          <span class="brand-text">
+            <span>CarSpot</span>
+            <small>Suriname</small>
           </span>
-          <span class="logo-type">CarSpot</span>
-        </div>
+        </a>
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
           <li><a href="#verified">Verification</a></li>
           <li><a href="#listings">Marketplace</a></li>
-          <li><a href="#sell">Sell Your Car</a></li>
+          <li><a href="#sell">Sell your car</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="cta" data-scroll="#sell">List your car</button>
+        <button class="btn btn-primary" data-scroll="#sell">List your car</button>
       </nav>
-      <div class="hero-content">
-        <div class="hero-text">
-          <span class="flag">🇸🇷</span>
-          <h1>Suriname's most electric car marketplace.</h1>
+      <div class="wrapper hero-body">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">SR • Paramaribo</span>
+          <h1>Suriname's most trusted car marketplace.</h1>
           <p>
-            Discover verified vehicles from proud owners across the country.
-            CarSpot Suriname powers concierge ID checks with an energetic,
-            neon-lit browsing experience so buyers and sellers can connect with
-            confidence.
+            Discover concierge-verified vehicles from owners across the country.
+            From Paramaribo to Nickerie, your next ride is waiting with
+            confidence built in.
           </p>
           <div class="hero-actions">
-            <button class="cta" data-scroll="#listings">Browse cars</button>
-            <button class="secondary" data-scroll="#sell">Sell your car</button>
+            <button class="btn btn-primary" data-scroll="#listings">
+              Browse listings
+            </button>
+            <button class="btn btn-outline" data-scroll="#sell">
+              Sell your car
+            </button>
+          </div>
+          <div class="hero-metrics">
+            <div class="hero-metric">
+              <strong>100%</strong>
+              <span>Verified sellers</span>
+            </div>
+            <div class="hero-metric">
+              <strong>48h</strong>
+              <span>Average approval</span>
+            </div>
+            <div class="hero-metric">
+              <strong>4.9★</strong>
+              <span>Community rating</span>
+            </div>
           </div>
         </div>
-        <div class="hero-highlight">
-          <div class="stat-card">
-            <h2>100%</h2>
-            <p>Verified sellers with ID approval</p>
-          </div>
-          <div class="stat-card">
-            <h2>48h</h2>
-            <p>Average approval time</p>
-          </div>
-          <div class="stat-card">
-            <h2>4.9★</h2>
-            <p>CarSpot community satisfaction</p>
-          </div>
-        </div>
+        <aside class="featured-card">
+          <span class="featured-label">Featured now</span>
+          <h3>2009 Toyota Vitz Premium</h3>
+          <p>
+            Freshly detailed, concierge-verified, ready for Paramaribo's
+            streets. Standout comfort with designer upholstery and a spotless
+            service history.
+          </p>
+          <dl class="featured-meta">
+            <div>
+              <dt>Price</dt>
+              <dd>SRD 72,750</dd>
+            </div>
+            <div>
+              <dt>Mileage</dt>
+              <dd>200,000 km</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd>Verification seal</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>Paramaribo</dd>
+            </div>
+          </dl>
+          <button class="btn btn-outline" data-scroll="#listings">
+            View this listing
+          </button>
+        </aside>
       </div>
     </header>
 
     <main>
       <section class="credibility" id="verified">
-        <div class="credibility-content">
-          <h2>Every CarSpot seller is personally verified.</h2>
-          <p>
-            Before any listing goes live, our team reviews the seller's national
-            ID to ensure authenticity. Suriname regulations empower us to
-            validate every submission, keeping the marketplace safe and
-            trustworthy.
-          </p>
-          <ul class="pillars">
-            <li>
-              <h3>Secure ID uploads</h3>
-              <p>Protected, encrypted submissions reviewed in-house.</p>
-            </li>
-            <li>
-              <h3>CarSpot concierge</h3>
-              <p>Dedicated specialists guide sellers from verification to sale.</p>
-            </li>
-            <li>
-              <h3>Buyer confidence</h3>
-              <p>Verified badges and transparent history on every vehicle.</p>
-            </li>
-          </ul>
-        </div>
-        <div class="credibility-badge">
-          <div class="badge-inner">
-            <span>Verified</span>
-            <strong>CarSpot Certified</strong>
-            <p>Trusted in Paramaribo & beyond</p>
+        <div class="wrapper credibility-grid">
+          <div class="credibility-content">
+            <h2>Every CarSpot listing starts with trusted ID verification.</h2>
+            <p>
+              Our local concierge team reviews each seller's Surinamese ID before
+              a listing ever goes live. The result? A safer marketplace for
+              buyers, and faster approvals for genuine owners ready to sell.
+            </p>
+            <ul class="pillars">
+              <li>
+                <h3>Secure submissions</h3>
+                <p>
+                  Encrypted uploads reviewed in-house so your documents stay
+                  protected.
+                </p>
+              </li>
+              <li>
+                <h3>Concierge guidance</h3>
+                <p>
+                  Dedicated specialists help craft listings that attract serious
+                  buyers.
+                </p>
+              </li>
+              <li>
+                <h3>Buyer confidence</h3>
+                <p>
+                  Verified badges, transparent history, and support every step of
+                  the sale.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="credibility-badge" aria-hidden="true">
+            <div class="badge-glow"></div>
+            <div class="badge-inner">
+              <span>CarSpot</span>
+              <strong>Securely Verified</strong>
+              <p>Trusted across Suriname</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="listings" id="listings">
-        <div class="section-header">
-          <div>
-            <h2>Featured rides glowing for the night drive.</h2>
-            <p>Hand-picked vehicles from approved Surinamese owners.</p>
+        <div class="wrapper">
+          <div class="section-header">
+            <div>
+              <h2>Featured rides ready for the night drive.</h2>
+              <p>Hand-picked vehicles from verified Surinamese owners.</p>
+            </div>
+            <div class="filters">
+              <label>
+                <span>Filter by price (SRD)</span>
+                <input
+                  type="range"
+                  id="priceFilter"
+                  min="0"
+                  max="250000"
+                  value="250000"
+                />
+              </label>
+              <span class="price-value">
+                Up to SRD <strong id="priceValue">250,000</strong>
+              </span>
+            </div>
           </div>
-          <div class="filters">
-            <label>
-              <span>Filter by price (SRD)</span>
-              <input type="range" id="priceFilter" min="0" max="250000" value="250000" />
-            </label>
-            <span class="price-value">Up to SRD <strong id="priceValue">250,000</strong></span>
-          </div>
+          <div class="cards" id="carGrid"></div>
         </div>
-        <div class="cards" id="carGrid"></div>
       </section>
 
       <section class="sell" id="sell">
-        <div class="sell-intro">
-          <h2>Ready to sell? Start with CarSpot ID verification.</h2>
-          <p>
-            Submit your Surinamese ID for a swift review. Once approved, your
-            listing goes live across the country within minutes. Expect a member
-            of the CarSpot concierge team to follow up and help you craft the
-            perfect listing.
-          </p>
-          <div class="steps">
-            <div class="step">
-              <span>01</span>
-              <h3>Submit ID</h3>
-              <p>Upload a clear photo of your national ID for approval.</p>
-            </div>
-            <div class="step">
-              <span>02</span>
-              <h3>Create listing</h3>
-              <p>Share your car's details, photos, and desired price.</p>
-            </div>
-            <div class="step">
-              <span>03</span>
-              <h3>Connect with buyers</h3>
-              <p>Receive secure messages directly from interested buyers.</p>
+        <div class="wrapper sell-grid">
+          <div class="sell-intro">
+            <h2>Ready to sell? Start with CarSpot ID verification.</h2>
+            <p>
+              Submit your Surinamese ID for a swift review. Once approved, your
+              listing goes live across the country within minutes. Expect a team
+              member to follow up and help you craft the perfect listing.
+            </p>
+            <div class="steps">
+              <div class="step">
+                <span>01</span>
+                <h3>Submit ID</h3>
+                <p>Upload a clear photo of your national ID for approval.</p>
+              </div>
+              <div class="step">
+                <span>02</span>
+                <h3>Create listing</h3>
+                <p>Share your car's details, photos, and desired price.</p>
+              </div>
+              <div class="step">
+                <span>03</span>
+                <h3>Meet buyers</h3>
+                <p>Verified shoppers message you directly through CarSpot.</p>
+              </div>
             </div>
           </div>
+          <form class="sell-form" id="sellForm">
+            <h3>List your vehicle</h3>
+            <label>
+              Full name
+              <input
+                type="text"
+                name="name"
+                placeholder="Your full name"
+                required
+              />
+            </label>
+            <label>
+              Email address
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </label>
+            <label>
+              Phone number
+              <input
+                type="tel"
+                name="phone"
+                placeholder="(+597) 000-0000"
+                required
+              />
+            </label>
+            <label>
+              ID document (front)
+              <input
+                type="file"
+                name="idFront"
+                accept="image/*,application/pdf"
+                required
+              />
+            </label>
+            <label>
+              ID document (back)
+              <input
+                type="file"
+                name="idBack"
+                accept="image/*,application/pdf"
+                required
+              />
+            </label>
+            <label>
+              Vehicle make &amp; model
+              <input
+                type="text"
+                name="model"
+                placeholder="Toyota Hilux"
+                required
+              />
+            </label>
+            <label>
+              Year
+              <input type="number" name="year" min="1980" max="2030" required />
+            </label>
+            <label>
+              Price (SRD)
+              <input type="number" name="price" min="0" step="500" required />
+            </label>
+            <label>
+              Description
+              <textarea
+                name="description"
+                rows="4"
+                placeholder="Tell buyers why this ride is special"
+                required
+              ></textarea>
+            </label>
+            <label>
+              Upload car photos
+              <input type="file" name="photos" accept="image/*" multiple />
+            </label>
+            <button type="submit" class="btn btn-primary btn-block">
+              Submit for verification
+            </button>
+            <p class="form-disclaimer">
+              By submitting, you authorize CarSpot Suriname to review your ID in
+              compliance with Surinamese regulations. Your data remains encrypted
+              and never leaves our secure servers.
+            </p>
+          </form>
         </div>
-        <form class="sell-form" id="sellForm">
-          <h3>List your vehicle</h3>
-          <label>
-            Full name
-            <input type="text" name="name" placeholder="Your full name" required />
-          </label>
-          <label>
-            Email address
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
-          <label>
-            Phone number
-            <input type="tel" name="phone" placeholder="(+597) 000-0000" required />
-          </label>
-          <label>
-            ID document (front)
-            <input type="file" name="idFront" accept="image/*,application/pdf" required />
-          </label>
-          <label>
-            ID document (back)
-            <input type="file" name="idBack" accept="image/*,application/pdf" required />
-          </label>
-          <label>
-            Vehicle make & model
-            <input type="text" name="model" placeholder="Toyota Hilux" required />
-          </label>
-          <label>
-            Year
-            <input type="number" name="year" min="1980" max="2030" required />
-          </label>
-          <label>
-            Price (SRD)
-            <input type="number" name="price" min="0" step="500" required />
-          </label>
-          <label>
-            Description
-            <textarea name="description" rows="4" placeholder="Tell buyers why this ride is special" required></textarea>
-          </label>
-          <label>
-            Upload car photos
-            <input type="file" name="photos" accept="image/*" multiple />
-          </label>
-          <button type="submit" class="cta full">Submit for verification</button>
-          <p class="form-disclaimer">
-            By submitting, you authorize CarSpot Suriname to review your ID in
-            compliance with Surinamese regulations. Your data remains encrypted
-            and never leaves our secure servers.
-          </p>
-        </form>
       </section>
 
       <section class="message" id="contact">
-        <div class="message-info">
-          <h2>Message sellers instantly with CarSpot Connect.</h2>
-          <p>
-            Interested in a vehicle? Send a secure message to the seller and our
-            CarSpot Connect system notifies them while masking your private
-            contact details until they respond.
-          </p>
-          <ul class="message-highlights">
-            <li>Built-in translation support for Dutch & Sranan Tongo.</li>
-            <li>Automatic safety screening of every message.</li>
-            <li>Reply from any device without sharing your number.</li>
-          </ul>
+        <div class="wrapper message-grid">
+          <div class="message-info">
+            <h2>Message sellers instantly with CarSpot Connect.</h2>
+            <p>
+              Interested in a vehicle? Send a secure message to the seller and
+              our system notifies them while masking your private contact
+              details until they respond.
+            </p>
+            <ul class="message-highlights">
+              <li>Built-in translation support for Dutch &amp; Sranan Tongo.</li>
+              <li>Automatic safety screening of every message.</li>
+              <li>Reply from any device without sharing your number.</li>
+            </ul>
+          </div>
+          <form class="message-form" id="messageForm">
+            <h3>Message a seller</h3>
+            <label>
+              Your name
+              <input
+                type="text"
+                name="buyerName"
+                placeholder="Your name"
+                required
+              />
+            </label>
+            <label>
+              Your email
+              <input
+                type="email"
+                name="buyerEmail"
+                placeholder="you@example.com"
+                required
+              />
+            </label>
+            <label>
+              Select a vehicle
+              <select name="vehicle" id="vehicleSelect" required></select>
+            </label>
+            <label>
+              Message
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Hi! I'm interested in taking a look."
+                required
+              ></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary btn-block">
+              Send secure message
+            </button>
+            <p class="form-disclaimer">
+              We deliver your message to the verified CarSpot seller network.
+            </p>
+          </form>
         </div>
-        <form class="message-form" id="messageForm">
-          <h3>Message a seller</h3>
-          <label>
-            Your name
-            <input type="text" name="buyerName" placeholder="Your name" required />
-          </label>
-          <label>
-            Your email
-            <input type="email" name="buyerEmail" placeholder="you@example.com" required />
-          </label>
-          <label>
-            Select a vehicle
-            <select name="vehicle" id="vehicleSelect" required></select>
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="4" placeholder="Hi! I'm interested in taking a look." required></textarea>
-          </label>
-          <button type="submit" class="cta full">Send secure message</button>
-          <p class="form-disclaimer">We deliver your message to the verified CarSpot seller network.</p>
-        </form>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="footer-inner">
+      <div class="wrapper footer-inner">
         <div>
           <h3>CarSpot Suriname</h3>
           <p>
@@ -244,13 +357,15 @@
           <p>Hendrikstraat 12, Paramaribo</p>
           <p>Mon – Sat: 9:00 – 18:00</p>
         </div>
-          <div>
-            <h4>Contact</h4>
-            <a href="mailto:hello@carspotsr.com">hello@carspotsr.com</a>
-            <a href="tel:+5971234567">(+597) 123-4567</a>
-          </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:hello@carspotsr.com">hello@carspotsr.com</a>
+          <a href="tel:+5971234567">(+597) 123-4567</a>
+        </div>
       </div>
-      <p class="footer-note">© <span id="year"></span> CarSpot Suriname. All rights reserved.</p>
+      <p class="footer-note">
+        © <span id="year"></span> CarSpot Suriname. All rights reserved.
+      </p>
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
