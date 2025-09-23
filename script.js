@@ -1,7 +1,7 @@
 const listings = [
   {
     id: 'car-1',
-    title: 'Toyota Vitz Comfort',
+    title: 'Toyota Vitz Premium',
     price: 2750,
     year: 2009,
     mileage: '200.000 km',
@@ -49,6 +49,8 @@ const listings = [
   },
 ];
 
+const navbar = document.querySelector('.navbar');
+const navToggle = document.querySelector('.menu-toggle');
 const carGrid = document.getElementById('carGrid');
 const priceFilter = document.getElementById('priceFilter');
 const priceValue = document.getElementById('priceValue');
@@ -56,6 +58,42 @@ const sellForm = document.getElementById('sellForm');
 const messageForm = document.getElementById('messageForm');
 const vehicleSelect = document.getElementById('vehicleSelect');
 const toast = document.getElementById('toast');
+
+if (navbar && navToggle) {
+  const closeNav = (shouldFocus = false) => {
+    navbar.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    if (shouldFocus) {
+      navToggle.focus();
+    }
+  };
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navbar.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  const navInteractive = navbar.querySelectorAll('.nav-links a, .nav-group .cta');
+  navInteractive.forEach((element) => {
+    element.addEventListener('click', () => {
+      if (navbar.classList.contains('is-open')) {
+        closeNav();
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navbar.classList.contains('is-open')) {
+      closeNav(true);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && navbar.classList.contains('is-open')) {
+      closeNav();
+    }
+  });
+}
 
 function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
   const filtered = listings.filter((listing) => listing.price <= maxPrice);
@@ -79,7 +117,7 @@ function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
         </div>
         <div class="card-footer">
           <strong>${formatCurrency(listing.price)}</strong>
-          <button data-message="${listing.id}">Message seller</button>
+          <button type="button" data-message="${listing.id}">Message seller</button>
         </div>
       </div>
     `;
