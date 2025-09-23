@@ -9,7 +9,7 @@ const listings = [
     description:
       'Toyota Vitz, PG plaat.',
     image:
-      'https://ibb.co/SXMjrVf7',
+      'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'car-2',
