@@ -142,7 +142,41 @@ img {
 }
 
 .hero {
+  position: relative;
   padding-bottom: 3rem;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+      linear-gradient(160deg, rgba(6, 9, 15, 0.9), rgba(6, 9, 15, 0.4)),
+    url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center 58%;
+  z-index: -2;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    125deg,
+    rgba(1, 68, 33, 0.35) 0%,
+    rgba(206, 17, 38, 0.25) 50%,
+    rgba(253, 218, 36, 0.25) 85%,
+    rgba(6, 9, 15, 0.55) 100%
+  );
+  z-index: -1;
+}
+
+.hero .navbar,
+.hero .hero-body {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-body {
@@ -197,6 +231,10 @@ img {
   background: linear-gradient(145deg, var(--surface), rgba(31, 39, 59, 0.85));
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+}
+
+.hero-stats strong {
+  display: block;
 }
 
 .hero-stats div {
@@ -397,6 +435,13 @@ input[type='range']::-moz-range-thumb {
   box-shadow: var(--shadow);
 }
 
+.form-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+  margin-bottom: 0;
+}
+
 label span {
   display: block;
   font-weight: 500;
@@ -413,6 +458,31 @@ select {
   background: rgba(15, 17, 23, 0.65);
   color: var(--text);
   font: inherit;
+}
+
+.id-upload input {
+  padding: 0.75rem 1rem;
+}
+
+input[type='file'] {
+  padding: 0.6rem 0.5rem;
+  color: var(--text-muted);
+}
+
+input[type='file']::file-selector-button {
+  margin-right: 1rem;
+  border: 1px solid var(--accent-strong);
+  background: rgba(93, 228, 199, 0.12);
+  color: var(--accent);
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font: inherit;
+}
+
+input[type='file']:hover::file-selector-button,
+input[type='file']:focus-visible::file-selector-button {
+  background: rgba(93, 228, 199, 0.2);
 }
 
 input:focus,

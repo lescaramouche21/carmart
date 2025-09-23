@@ -2,7 +2,7 @@ const listings = [
   {
     id: 'car-1',
     title: 'Toyota Hilux Adventure',
-    price: 185000,
+    price: 48500,
     year: 2019,
     mileage: '45,000 km',
     location: 'Paramaribo',
@@ -14,7 +14,7 @@ const listings = [
   {
     id: 'car-2',
     title: 'Hyundai Creta Urban',
-    price: 142000,
+    price: 31200,
     year: 2021,
     mileage: '18,500 km',
     location: 'Commewijne',
@@ -26,7 +26,7 @@ const listings = [
   {
     id: 'car-3',
     title: 'Kia Sportage Signature',
-    price: 198000,
+    price: 52800,
     year: 2022,
     mileage: '12,000 km',
     location: 'Nickerie',
@@ -38,7 +38,7 @@ const listings = [
   {
     id: 'car-4',
     title: 'Honda Fit Hybrid',
-    price: 98000,
+    price: 16800,
     year: 2018,
     mileage: '55,000 km',
     location: 'Wanica',
@@ -58,6 +58,8 @@ const vehicleSelect = document.getElementById('vehicleSelect');
 const toast = document.getElementById('toast');
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
+
+const formatUsd = (value) => `US$ ${Number(value).toLocaleString('en-US')}`;
 
 function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
   const filtered = listings.filter((listing) => listing.price <= maxPrice);
@@ -80,7 +82,7 @@ function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
           <span>${listing.location}</span>
         </div>
         <div class="card-footer">
-          <strong>SRD ${listing.price.toLocaleString()}</strong>
+          <strong>${formatUsd(listing.price)}</strong>
           <button data-message="${listing.id}">Message seller</button>
         </div>
       </div>
@@ -105,7 +107,7 @@ function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
 
 function updatePriceLabel(value) {
   if (priceValue) {
-    priceValue.textContent = Number(value).toLocaleString();
+    priceValue.textContent = Number(value).toLocaleString('en-US');
   }
 }
 
@@ -114,7 +116,7 @@ function updateVehicleOptions(listingsToShow) {
   listingsToShow.forEach((listing) => {
     const option = document.createElement('option');
     option.value = listing.id;
-    option.textContent = `${listing.title} — SRD ${listing.price.toLocaleString()}`;
+    option.textContent = `${listing.title} — ${formatUsd(listing.price)}`;
     vehicleSelect.appendChild(option);
   });
 }
@@ -171,6 +173,13 @@ carGrid?.addEventListener('click', (event) => {
 sellForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(sellForm);
+  const idFile = formData.get('idUpload');
+
+  const hasFileInterface = typeof File !== 'undefined';
+  if (!idFile || (hasFileInterface && idFile instanceof File && idFile.size === 0)) {
+    showToast('Please attach your government ID before submitting.', 'error');
+    return;
+  }
 
   const newListing = {
     id: `car-${Date.now()}`,
@@ -206,7 +215,12 @@ sellForm?.addEventListener('submit', (event) => {
 
   renderListings(maxForRender);
   sellForm.reset();
-  showToast("Thanks! CarSpot's verification team will review your ID shortly.");
+  const idName = hasFileInterface && idFile instanceof File && idFile.name
+    ? ` ${idFile.name}`
+    : '';
+  showToast(
+    `Thanks! CarSpot's verification team will review your ID${idName} shortly.`,
+  );
 });
 
 messageForm?.addEventListener('submit', (event) => {

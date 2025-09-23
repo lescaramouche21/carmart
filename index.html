@@ -35,11 +35,12 @@
       </nav>
       <div class="wrapper hero-body">
         <div class="hero-copy">
-          <span class="hero-tag">Suriname • Night market</span>
-          <h1>Minimal cars. Maximum confidence.</h1>
+          <span class="hero-tag">Suriname • Night drives</span>
+          <h1>Glowing rides. Verified owners.</h1>
           <p>
             CarSpot connects Surinamese drivers with verified sellers through a
-            clean, distraction-free marketplace built for night-mode browsing.
+            cinematic, night-ready marketplace that now prices everything in US
+            dollars for clarity.
           </p>
           <div class="hero-actions">
             <button class="btn btn-primary" data-scroll="#listings">
@@ -52,12 +53,12 @@
         </div>
         <aside class="hero-stats">
           <div>
-            <strong>48h</strong>
-            <span>Average approval</span>
-          </div>
-          <div>
             <strong>100%</strong>
             <span>ID verified sellers</span>
+          </div>
+          <div>
+            <strong>48h</strong>
+            <span>Average approval</span>
           </div>
           <div>
             <strong>4.9★</strong>
@@ -74,12 +75,13 @@
             <h2>Verification built into the flow.</h2>
             <p>
               Every listing passes through CarSpot's in-house concierge. Seller
-              IDs are reviewed securely before a car appears in the grid.
+              IDs are reviewed securely before a car appears in the grid, and a
+              government-issued document is required to unlock messaging.
             </p>
             <ul class="feature-list">
               <li>
                 <h3>Secure upload</h3>
-                <p>Encrypted document handling that respects privacy.</p>
+                <p>Encrypted ID handling keeps your Surinamese documents safe.</p>
               </li>
               <li>
                 <h3>Local expertise</h3>
@@ -113,11 +115,11 @@
                   type="range"
                   id="priceFilter"
                   min="0"
-                  max="250000"
-                  value="250000"
+                  max="60000"
+                  value="60000"
                 />
               </label>
-              <p class="filter-value">Up to SRD <span id="priceValue">250,000</span></p>
+              <p class="filter-value">Up to US$ <span id="priceValue">60,000</span></p>
             </div>
           </div>
           <div class="grid" id="carGrid"></div>
@@ -151,9 +153,22 @@
               <input type="number" name="year" min="1990" max="2025" required />
             </label>
             <label>
-              <span>Asking price (SRD)</span>
-              <input type="number" name="price" min="0" step="500" required />
+              <span>Asking price (USD)</span>
+              <input type="number" name="price" min="0" step="100" required />
             </label>
+            <label class="id-upload">
+              <span>Government ID (PDF or image)</span>
+              <input
+                type="file"
+                name="idUpload"
+                accept="image/*,application/pdf"
+                required
+              />
+            </label>
+            <p class="form-note">
+              A clear Surinamese driver’s license or national ID is required for
+              every listing submission.
+            </p>
             <label>
               <span>Vehicle description</span>
               <textarea name="description" rows="4" required></textarea>

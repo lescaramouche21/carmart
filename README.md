@@ -1,12 +1,12 @@
 # CarSpot Suriname
 
-A premium single-page marketplace experience for verified car sales in Suriname. Sellers submit their Surinamese ID for review before publishing listings, while buyers can filter vehicles and send secure messages to verified owners.
+A premium single-page marketplace experience for verified car sales in Suriname. Sellers submit their Surinamese ID for review before publishing listings, while buyers can filter vehicles and send secure messages to verified owners with pricing presented in US dollars.
 
 ## Features
 
-- Minimal night-mode hero with a simplified CarSpot logo, concise copy, and quick stats.
+- Neon night-mode hero with a simplified CarSpot logo, concise copy, and a Suriname-inspired car backdrop.
 - Verification overview describing the Surinamese ID review process.
-- Interactive marketplace grid with price filtering that adapts to new listings.
+- Interactive marketplace grid with adaptive price filtering that updates new USD listings in real time.
 - Seller onboarding form for ID review plus a buyer messaging form tied to current listings.
 - Smooth scrolling navigation, responsive layout, mobile menu toggle, and toast notifications.
 
