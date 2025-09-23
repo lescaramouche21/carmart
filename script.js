@@ -2,7 +2,7 @@ const listings = [
   {
     id: 'car-1',
     title: 'Toyota Hilux Adventure',
-    price: 185000,
+    price: 52500,
     year: 2019,
     mileage: '45,000 km',
     location: 'Paramaribo',
@@ -14,7 +14,7 @@ const listings = [
   {
     id: 'car-2',
     title: 'Hyundai Creta Urban',
-    price: 142000,
+    price: 36800,
     year: 2021,
     mileage: '18,500 km',
     location: 'Commewijne',
@@ -26,7 +26,7 @@ const listings = [
   {
     id: 'car-3',
     title: 'Kia Sportage Signature',
-    price: 198000,
+    price: 44900,
     year: 2022,
     mileage: '12,000 km',
     location: 'Nickerie',
@@ -38,7 +38,7 @@ const listings = [
   {
     id: 'car-4',
     title: 'Honda Fit Hybrid',
-    price: 98000,
+    price: 17500,
     year: 2018,
     mileage: '55,000 km',
     location: 'Wanica',
@@ -78,7 +78,7 @@ function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
           <span>${listing.location}</span>
         </div>
         <div class="card-footer">
-          <strong>SRD ${listing.price.toLocaleString()}</strong>
+          <strong>${formatCurrency(listing.price)}</strong>
           <button data-message="${listing.id}">Message seller</button>
         </div>
       </div>
@@ -106,9 +106,25 @@ function updateVehicleOptions(listingsToShow) {
   listingsToShow.forEach((listing) => {
     const option = document.createElement('option');
     option.value = listing.id;
-    option.textContent = `${listing.title} — SRD ${listing.price.toLocaleString()}`;
+    option.textContent = `${listing.title} — ${formatCurrency(listing.price)}`;
     vehicleSelect.appendChild(option);
   });
+}
+
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
+function formatCurrency(value) {
+  return currencyFormatter.format(value);
+}
+
+function updatePriceDisplay() {
+  if (!priceFilter || !priceValue) return;
+  priceValue.textContent = formatCurrency(Number(priceFilter.value));
 }
 
 function showToast(message, type = 'success') {
@@ -132,7 +148,7 @@ document.querySelectorAll('[data-scroll]').forEach((trigger) => {
 
 priceFilter?.addEventListener('input', (event) => {
   const max = Number(event.target.value);
-  priceValue.textContent = max.toLocaleString();
+  updatePriceDisplay();
   renderListings(max);
 });
 
@@ -163,7 +179,23 @@ sellForm?.addEventListener('submit', (event) => {
   };
 
   listings.unshift(newListing);
-  renderListings(Number(priceFilter.value));
+
+  if (priceFilter) {
+    const sliderStep = Number(priceFilter.step) || 1000;
+    const currentMax = Number(priceFilter.max);
+    if (newListing.price > currentMax) {
+      const adjustedMax = Math.ceil(newListing.price / sliderStep) * sliderStep;
+      priceFilter.max = adjustedMax;
+      priceFilter.value = adjustedMax;
+    } else {
+      const desiredValue = Math.max(Number(priceFilter.value), newListing.price);
+      priceFilter.value = Math.ceil(desiredValue / sliderStep) * sliderStep;
+    }
+    updatePriceDisplay();
+    renderListings(Number(priceFilter.value));
+  } else {
+    renderListings();
+  }
   sellForm.reset();
   showToast('Thanks! Our verification team will review your ID shortly.');
 });
@@ -187,9 +219,22 @@ messageForm?.addEventListener('submit', (event) => {
 function init() {
   const now = new Date();
   document.getElementById('year').textContent = now.getFullYear();
-  const initialMax = Number(priceFilter.value);
-  priceValue.textContent = initialMax.toLocaleString();
-  renderListings(initialMax);
+  if (priceFilter) {
+    const sliderStep = Number(priceFilter.step) || 1000;
+    const highestPrice = listings.reduce(
+      (max, listing) => Math.max(max, listing.price),
+      0
+    );
+    const adjustedMax = Math.ceil(highestPrice / sliderStep) * sliderStep;
+    if (adjustedMax > Number(priceFilter.max)) {
+      priceFilter.max = adjustedMax;
+    }
+    priceFilter.value = priceFilter.max;
+    updatePriceDisplay();
+    renderListings(Number(priceFilter.value));
+  } else {
+    renderListings();
+  }
 }
 
 init();

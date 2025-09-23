@@ -1,4 +1,4 @@
-# CarMart Suriname
+# CarSpot Suriname
 
 A polished single-page marketplace experience for verified car sales in Suriname. Sellers submit their Surinamese ID for review before publishing listings, while buyers can filter vehicles and send secure messages to verified owners.
 
