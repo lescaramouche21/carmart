@@ -56,6 +56,8 @@ const sellForm = document.getElementById('sellForm');
 const messageForm = document.getElementById('messageForm');
 const vehicleSelect = document.getElementById('vehicleSelect');
 const toast = document.getElementById('toast');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
 
 function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
   const filtered = listings.filter((listing) => listing.price <= maxPrice);
@@ -135,6 +137,20 @@ function scrollToSection(selector) {
 document.querySelectorAll('[data-scroll]').forEach((trigger) => {
   trigger.addEventListener('click', () => scrollToSection(trigger.dataset.scroll));
 });
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('show');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 priceFilter?.addEventListener('input', (event) => {
   const max = Number(event.target.value);

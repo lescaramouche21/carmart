@@ -4,12 +4,11 @@ A premium single-page marketplace experience for verified car sales in Suriname.
 
 ## Features
 
-- Cinematic hero with a dark-accent gradient, featured listing spotlight, and glowing CarSpot badgework.
-- Verification spotlight explaining the ID approval workflow required before listing.
-- Interactive marketplace grid with price filtering and highlighted verified sellers.
-- Seller onboarding form that captures ID uploads, vehicle details, and pricing.
-- Buyer messaging form that connects interested shoppers with sellers through the CarSpot Connect secure flow.
-- Smooth scrolling navigation, responsive layout, and animated toast notifications.
+- Minimal night-mode hero with a simplified CarSpot logo, concise copy, and quick stats.
+- Verification overview describing the Surinamese ID review process.
+- Interactive marketplace grid with price filtering that adapts to new listings.
+- Seller onboarding form for ID review plus a buyer messaging form tied to current listings.
+- Smooth scrolling navigation, responsive layout, mobile menu toggle, and toast notifications.
 
 ## Getting started
 
