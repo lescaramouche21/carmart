@@ -190,7 +190,7 @@ sellForm?.addEventListener('submit', (event) => {
 
   renderListings(maxForRender);
   sellForm.reset();
-  showToast('Thanks! Our verification team will review your ID shortly.');
+  showToast("Thanks! CarSpot's verification team will review your ID shortly.");
 });
 
 messageForm?.addEventListener('submit', (event) => {
