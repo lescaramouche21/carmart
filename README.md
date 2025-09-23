@@ -1,24 +1,25 @@
 # CarSpot Suriname
 
-A polished single-page marketplace experience for verified car sales in Suriname. Sellers submit their Surinamese ID for review before publishing listings, while buyers can filter vehicles and send secure messages to verified owners.
+An ultra-premium single-page marketplace showcasing concierge-level car listings for Suriname. Every seller
+submits their national ID for review before their vehicle goes live, ensuring buyers only meet vetted owners.
 
-## Features
+## Experience highlights
 
-- Hero section tailored for Suriname with national colors and premium branding.
-- Verification spotlight explaining the ID approval workflow required before listing.
-- Interactive marketplace grid with price filtering and highlighted verified sellers.
-- Seller onboarding form that captures ID uploads, vehicle details, and pricing.
-- Buyer messaging form that connects interested shoppers with sellers through a secure flow.
-- Smooth scrolling navigation, responsive layout, and animated toast notifications.
+- **Night-drive aesthetic** – Neon-inspired gradients, glassmorphism cards, and a Space Grotesk/Manrope type stack
+  deliver a bold look that stands apart from traditional classifieds.
+- **Concierge storytelling** – Hero spotlight, verification badge, and curated listing cards celebrate each vehicle
+  with perks, provenance, and pricing in USD.
+- **Interactive marketplace** – Price filtering, smooth scrolling navigation, responsive mobile menu, and toast
+  notifications guide shoppers from discovery through secure messaging.
+- **Seller trust workflow** – Dedicated verification explainer, ID submission form, and concierge messaging reassure
+  both parties that the marketplace is locally compliant and carefully moderated.
 
-## Getting started
+## Run locally
 
-Open `index.html` in your browser. All styling and interactivity are handled via `styles.css` and `script.js`.
-
-For best results, serve the site locally to ensure proper loading of external assets:
+Open `index.html` directly in your browser, or serve the directory to ensure external assets load correctly:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000).
+Then browse to [http://localhost:8000](http://localhost:8000) to explore the experience.

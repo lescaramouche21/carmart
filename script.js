@@ -1,51 +1,59 @@
 const listings = [
   {
     id: 'car-1',
-    title: 'Toyota Vitz Premium',
-    price: 2750,
-    year: 2009,
-    mileage: '200.000 km',
+    title: 'Toyota Yaris RS Touring',
+    tier: 'Elite verified',
+    price: 3950,
+    year: 2008,
+    mileage: '148,000 km',
     location: 'Paramaribo',
     description:
-      'Reliable hatchback with fresh maintenance, cold A/C, and great fuel economy for city drives.',
+      'Sport-tuned RS trim with CarSpot concierge inspection, rally aero kit, and full maintenance dossier.',
+    perks: ['One-owner history', 'Full concierge photo set', 'Includes performance spares'],
     image:
-      'https://images.unsplash.com/photo-1523981080-871d9ab01868?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'car-2',
-    title: 'Hyundai Creta Urban',
-    price: 36800,
+    title: 'Nissan X-Trail Platinum AWD',
+    tier: 'Concierge certified',
+    price: 43800,
     year: 2021,
-    mileage: '18,500 km',
+    mileage: '22,500 km',
     location: 'Commewijne',
     description:
-      'Compact SUV with advanced safety features and infotainment upgrades. Single owner.',
+      'Executive AWD spec with panoramic roof, adaptive cruise, and 360° camera suite. Dealer serviced.',
+    perks: ['Panoramic sunroof', 'Factory warranty active', 'CarSpot concierge delivery'],
     image:
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'car-3',
-    title: 'Kia Sportage Signature',
-    price: 44900,
-    year: 2022,
-    mileage: '12,000 km',
-    location: 'Nickerie',
+    title: 'BMW 320i M Sport Shadow',
+    tier: 'Elite verified',
+    price: 52900,
+    year: 2020,
+    mileage: '31,400 km',
+    location: 'Paramaribo',
     description:
-      'Premium package with panoramic roof, ventilated seats, and wireless CarPlay.',
+      'Shadow Edition sedan with M Sport styling, digital cockpit, and full CarSpot ceramic protection.',
+    perks: ['Adaptive LED headlights', 'Ceramic exterior protection', 'Two years concierge service'],
     image:
-      'https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'car-4',
-    title: 'Honda Fit Hybrid',
-    price: 17500,
-    year: 2018,
-    mileage: '55,000 km',
-    location: 'Wanica',
+    title: 'Suzuki Jimny Heritage',
+    tier: 'Concierge certified',
+    price: 28750,
+    year: 2019,
+    mileage: '18,900 km',
+    location: 'Nickerie',
     description:
-      'Fuel-efficient hatchback with hybrid technology and city-friendly size.',
+      'Iconic 4x4 in heritage green. Concierge-detailed with safari accessories and navigation upgrade.',
+    perks: ['Safari rack & ladder', 'CarPlay navigation upgrade', 'Includes two-year maintenance plan'],
     image:
-      'https://images.unsplash.com/photo-1617813489114-11364f0d107d?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=1200&q=80',
   },
 ];
 
@@ -102,14 +110,21 @@ function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
   filtered.forEach((listing) => {
     const card = document.createElement('article');
     card.className = 'card';
+    const perks = listing.perks
+      ?.map((perk) => `<li><span>+</span>${perk}</li>`)
+      .join('') || '';
+
     card.innerHTML = `
-      <img src="${listing.image}" alt="${listing.title}" loading="lazy" />
+      <div class="card-media">
+        <img src="${listing.image}" alt="${listing.title}" loading="lazy" />
+      </div>
       <div class="card-body">
         <div class="card-header">
+          <span class="badge">${listing.tier}</span>
           <h3>${listing.title}</h3>
-          <span class="badge">Verified seller</span>
         </div>
         <p>${listing.description}</p>
+        <ul class="card-perks">${perks}</ul>
         <div class="card-meta">
           <span>${listing.year}</span>
           <span>${listing.mileage}</span>
@@ -126,11 +141,11 @@ function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
 
   if (filtered.length === 0) {
     const empty = document.createElement('div');
-    empty.className = 'card';
+    empty.className = 'card card-empty';
     empty.innerHTML = `
       <div class="card-body">
         <h3>No cars match your filter… yet!</h3>
-        <p>Adjust the price range or come back soon for newly verified listings.</p>
+        <p>Adjust the price range or check back as new concierge listings go live.</p>
       </div>
     `;
     carGrid.appendChild(empty);
@@ -196,7 +211,7 @@ carGrid?.addEventListener('click', (event) => {
     const id = button.dataset.message;
     vehicleSelect.value = id;
     scrollToSection('#contact');
-    showToast('Message the seller and we will deliver your note securely.');
+    showToast('Ready to connect — your message will be relayed via concierge.');
   }
 });
 
@@ -207,13 +222,15 @@ sellForm?.addEventListener('submit', (event) => {
   const newListing = {
     id: `car-${Date.now()}`,
     title: formData.get('model'),
+    tier: 'Pending verification',
     price: Number(formData.get('price')),
     year: Number(formData.get('year')),
     mileage: 'New listing',
-    location: 'Pending approval',
+    location: 'Awaiting concierge review',
     description: formData.get('description'),
+    perks: ['Verification in progress', 'Concierge onboarding scheduled'],
     image:
-      'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80',
   };
 
   listings.unshift(newListing);
@@ -235,7 +252,7 @@ sellForm?.addEventListener('submit', (event) => {
     renderListings();
   }
   sellForm.reset();
-  showToast('Thanks! Our verification team will review your ID shortly.');
+  showToast('Thanks! Our concierge team will review your documents shortly.');
 });
 
 messageForm?.addEventListener('submit', (event) => {
@@ -250,7 +267,7 @@ messageForm?.addEventListener('submit', (event) => {
     return;
   }
 
-  showToast(`Message sent to ${listing.title} seller. Expect a reply soon, ${buyerName}!`);
+  showToast(`Message sent to the ${listing.title} concierge. Expect a reply soon, ${buyerName}!`);
   messageForm.reset();
 });
 
