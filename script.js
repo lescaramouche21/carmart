@@ -7,7 +7,7 @@ const listings = [
     mileage: '200,000 km',
     location: 'Paramaribo',
     description:
-      'Toyota Vitz, PG plaat.',
+      'PG plaat, onderstel compleet, gearbox compleet, machine compleet.',
     image:
       'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
   },
