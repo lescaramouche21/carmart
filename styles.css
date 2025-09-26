@@ -1,11 +1,11 @@
 :root {
   --bg: #0b1d26;
-  --accent: #ffce00;
+  --accent: #ff7a01;
   --accent-2: #237b9f;
   --text: #79b5ff;
-  --muted: rgba(245, 247, 250, 0.7);
+  --muted: rgba(255, 255, 255, 0.7);
   --card-bg: rgba(16, 32, 44, 0.8);
-  --glass: rgb(20 48 255 / 0.85);
+  --glass: rgb(92 255 199 / 0.42);
   --surface: #132835;
   --border: rgba(255, 255, 255, 0.08);
   font-size: 16px;
