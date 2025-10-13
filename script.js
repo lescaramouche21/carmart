@@ -1,13 +1,13 @@
 const modules = [
   {
     id: 'fase-1',
-    title: 'Fase 1 · Basis theorie',
+    title: 'Fase 1 · Basis theorie Suriname',
     focus: 'theorie',
     duration: '1 week',
     points: [
-      'Verkeersborden & voorrangsregels',
-      'Snel je theorie-examen plannen',
-      'Quizzen met directe feedback',
+      'Surinaamse verkeersborden & voorrangsregels',
+      'Aanmelden bij het Centraal Bureau voor Rijbewijzen',
+      'Quizzen met lokale verkeerscases',
     ],
   },
   {
@@ -16,9 +16,9 @@ const modules = [
     focus: 'praktijk',
     duration: '2 weken',
     points: [
-      'Starten, sturen & bijzondere verrichtingen',
-      'Camerabeelden vanuit bestuurdersperspectief',
-      'Checklist voor jouw volgende praktijkrit',
+      'Starten, sturen & bijzondere verrichtingen links van de weg',
+      'Camerabeelden vanuit bestuurdersperspectief in Paramaribo',
+      'Checklist voor jouw volgende praktijkrit over de Ringweg',
     ],
   },
   {
@@ -27,9 +27,9 @@ const modules = [
     focus: 'praktijk',
     duration: '2 weken',
     points: [
-      'Inhalen, ritsen en snelwegstrategieën',
-      'Anticiperen in druk stadsverkeer',
-      'Reflectieopdrachten na elke rit',
+      'Inhalen, ritsen en bruggen zoals de Wijdenboschbrug',
+      'Anticiperen in druk stadsverkeer rond het Onafhankelijkheidsplein',
+      'Reflectieopdrachten na elke rit door Paramaribo-Zuid',
     ],
   },
   {
@@ -38,9 +38,9 @@ const modules = [
     focus: 'examen',
     duration: '1 week',
     points: [
-      'Stap-voor-stap examenplanning',
-      'Voorbeelden van examenvragen & valkuilen',
-      'Mentale voorbereiding en ontspanningstechnieken',
+      'Stap-voor-stap examenplanning bij het CBR-SU',
+      'Voorbeelden van examenvragen & valkuilen op Surinaamse kruisingen',
+      'Mentale voorbereiding en ontspanningstechnieken voor examenroutes',
     ],
   },
   {
@@ -49,9 +49,9 @@ const modules = [
     focus: 'praktijk',
     duration: 'Doorlopend',
     points: [
-      'Downloadbare routes in Google Maps',
-      'Dagboek voor vorderingen in de auto',
-      'Extra tips voor rijden in regen en avond',
+      'Downloadbare routes door Paramaribo en Wanica',
+      'Dagboek voor vorderingen in de lesauto',
+      'Extra tips voor rijden in tropische regen en avondspits',
     ],
   },
   {
@@ -61,8 +61,8 @@ const modules = [
     duration: 'Iedere vrijdag',
     points: [
       'Live Q&A met instructeur van Rijschool Climax',
-      'Bespreek lastige verkeerssituaties',
-      'Netwerk met andere leerlingen',
+      'Bespreek lastige verkeerssituaties op de Oost-Westverbinding',
+      'Netwerk met andere leerlingen in Suriname',
     ],
   },
 ];
@@ -70,63 +70,63 @@ const modules = [
 const videos = [
   {
     id: 'vid-1',
-    title: 'Kijken, observeren & spiegelen',
+    title: 'Kijken, observeren & spiegelen in Paramaribo',
     type: 'praktijk',
     length: '12:48',
     image:
       'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80',
     url: 'https://www.youtube.com/watch?v=rJq7cV1JbUY',
-    summary: 'Leer hoe je actief scant en veilig van rijstrook wisselt in druk verkeer.',
+    summary: 'Leer hoe je actief scant en veilig van rijstrook wisselt rond het Onafhankelijkheidsplein.',
   },
   {
     id: 'vid-2',
-    title: 'Snelwegen zonder stress',
+    title: 'Snelwegen en bruggen zonder stress',
     type: 'praktijk',
     length: '09:36',
     image:
       'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80',
     url: 'https://www.youtube.com/watch?v=Q3D1fLwWf0c',
-    summary: 'In- en uitvoegen, kijktechniek en snelheid kiezen aan de hand van real-life beelden.',
+    summary: 'In- en uitvoegen, kijktechniek en snelheid kiezen op de Jules Wijdenboschbrug en Ringweg.',
   },
   {
     id: 'vid-3',
-    title: 'Theorie essentials: Voorrang',
+    title: 'Theorie essentials: Surinaamse voorrang',
     type: 'theorie',
     length: '14:22',
     image:
       'https://images.unsplash.com/photo-1533237264985-ee5053c4e159?auto=format&fit=crop&w=900&q=80',
     url: 'https://www.youtube.com/watch?v=9h0vG96h0aY',
-    summary: 'Alle voorrangssituaties stap voor stap uitgelegd met interactieve voorbeelden.',
+    summary: 'Alle voorrangssituaties stap voor stap uitgelegd volgens het Surinaamse verkeersreglement.',
   },
   {
     id: 'vid-4',
-    title: 'Praktijkexamen walkthrough',
+    title: 'Praktijkexamen walkthrough Paramaribo',
     type: 'examen',
     length: '18:05',
     image:
       'https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80',
     url: 'https://www.youtube.com/watch?v=6zBgMbdcQwM',
-    summary: 'Volg een volledige examenrit met commentaar van instructeur en examinator.',
+    summary: 'Volg een volledige examenrit met commentaar van instructeur en examinator van het CBR-SU.',
   },
   {
     id: 'vid-5',
-    title: 'Parkeren tussen twee auto\'s',
+    title: 'Parkeren tussen twee auto\'s bij Hermitage Mall',
     type: 'praktijk',
     length: '07:51',
     image:
       'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
     url: 'https://www.youtube.com/watch?v=gYQ0B47Lbyw',
-    summary: 'Stapsgewijze uitleg met bovenaanzicht en stuurbewegingen in beeld.',
+    summary: 'Stapsgewijze uitleg met bovenaanzicht en stuurbewegingen op drukke parkeerplaatsen.',
   },
   {
     id: 'vid-6',
-    title: 'Examentraining theorie',
+    title: 'Examentraining theorie Suriname',
     type: 'examen',
     length: '11:30',
     image:
       'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80',
     url: 'https://www.youtube.com/watch?v=Nza5gT8QkqY',
-    summary: 'Maak een mini-proefexamen en kijk mee met de uitleg van elke vraag.',
+    summary: 'Maak een mini-proefexamen en kijk mee met de uitleg van elke vraag volgens Surinaamse richtlijnen.',
   },
 ];
 

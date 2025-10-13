@@ -1,13 +1,13 @@
 # Rijschool Climax
 
-Een moderne single-page website voor de online lesstudio van Rijschool Climax. Leerlingen ontdekken het complete leerpad, bekijken on-demand videolessen en kunnen zich direct aanmelden voor een proefles.
+Een moderne single-page website voor de online lesstudio van Rijschool Climax in Suriname. Leerlingen ontdekken het complete leerpad voor links rijden, bekijken on-demand videolessen met Paramaribo-routes en kunnen zich direct aanmelden voor een proefles.
 
 ## Hoogtepunten
 
 - Heldere hero-sectie met statistieken over geslaagde leerlingen en een directe call-to-action.
-- Programma-overzicht waarin de fases van het traject en live community sessies worden toegelicht.
-- Videobibliotheek met filterknoppen voor theorie-, praktijk- en examenvideo's.
-- Fotogalerij, testimonials, tarieven en een uitgebreide FAQ voor vertrouwen en duidelijkheid.
+- Programma-overzicht waarin de Surinaamse verkeersfases en live community sessies worden toegelicht.
+- Videobibliotheek met filterknoppen voor theorie-, praktijk- en examenvideo's gericht op Paramaribo en omgeving.
+- Fotogalerij, testimonials, tarieven en een uitgebreide FAQ met focus op Surinaamse verkeersregels.
 - Aanmeldformulier met interactieve toastmelding en vloeiende smooth-scroll navigatie.
 
 ## Aan de slag
