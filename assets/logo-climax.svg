@@ -1,0 +1,57 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Rijschool Climax logo</title>
+  <desc id="desc">Glowing blauwe auto met L-bord en de tekst Climax Rijschool</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#39a9ff" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#2377f2" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#050608" stop-opacity="1" />
+    </radialGradient>
+    <linearGradient id="carGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#60c5ff" />
+      <stop offset="100%" stop-color="#0f5fdb" />
+    </linearGradient>
+    <linearGradient id="wheelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b4ba8" />
+      <stop offset="100%" stop-color="#072d68" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#glow)" rx="40" />
+  <g transform="translate(80 120)">
+    <path
+      d="M63 150c3-36 24-66 55-83l38-21c15-8 33-12 50-12h52c18 0 35 7 48 20l28 27c9 9 21 14 34 14h32c18 0 32 14 32 32v10c0 10-8 18-18 18H63z"
+      fill="url(#carGradient)"
+    />
+    <path
+      d="M74 188c0-25 20-45 45-45s45 20 45 45-20 45-45 45-45-20-45-45zm222 0c0-25 20-45 45-45s45 20 45 45-20 45-45 45-45-20-45-45z"
+      fill="url(#wheelGradient)"
+    />
+    <circle cx="119" cy="188" r="26" fill="#0d1f3c" />
+    <circle cx="341" cy="188" r="26" fill="#0d1f3c" />
+    <path
+      d="M166 108h45c6 0 11 5 11 11v27h-56z"
+      fill="#0d4ec5"
+    />
+    <path
+      d="M179 54h52v59h-52z"
+      fill="#0f67eb"
+      rx="6"
+    />
+    <path d="M197 75h21v38h-21z" fill="#113672" />
+    <path d="M208 75h10v24h-21v-10h11z" fill="#6cc8ff" />
+    <path
+      d="M111 128c12-34 44-57 80-57h110c22 0 43 9 58 25l29 30c3 4 1 11-5 11H111z"
+      fill="#2c88f0"
+      opacity="0.65"
+    />
+    <path
+      d="M84 154h324c9 0 16 7 16 16s-7 16-16 16H84c-9 0-16-7-16-16s7-16 16-16z"
+      fill="#1149ac"
+      opacity="0.35"
+    />
+  </g>
+  <g fill="#03204a" font-family="'Poppins', 'Montserrat', 'Arial Black', sans-serif" text-anchor="middle">
+    <text x="256" y="370" font-size="72" font-weight="700" letter-spacing="10">CLIMAX</text>
+    <text x="256" y="430" font-size="42" font-weight="600" letter-spacing="8">RIJSCHOOL</text>
+  </g>
+</svg>

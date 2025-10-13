@@ -54,9 +54,25 @@ section {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--accent-2);
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+}
+
+.logo-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 12px 24px rgba(36, 96, 167, 0.28);
 }
 
 .nav-links {
