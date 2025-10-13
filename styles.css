@@ -659,10 +659,29 @@ blockquote footer {
   box-shadow: 0 20px 45px rgba(31, 42, 68, 0.25);
   transition: transform 0.4s ease;
   z-index: 1000;
+  text-align: center;
+  min-width: min(320px, 90vw);
+}
+
+.toast.success {
+  background: #1f2a44;
+}
+
+.toast.error {
+  background: #d64545;
+}
+
+.toast.info {
+  background: #2c7be5;
 }
 
 .toast.show {
   transform: translateX(-50%) translateY(0);
+}
+
+.contact-form .cta.loading {
+  opacity: 0.8;
+  cursor: wait;
 }
 
 @media (max-width: 900px) {

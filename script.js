@@ -135,6 +135,7 @@ const videoGrid = document.getElementById('videoGrid');
 const filterButtons = document.querySelectorAll('.filter');
 const contactForm = document.getElementById('contactForm');
 const toast = document.getElementById('toast');
+const submitButton = contactForm?.querySelector('button[type="submit"]');
 
 function createModuleCard(module) {
   const article = document.createElement('article');
@@ -216,7 +217,7 @@ function handleFilterClick(event) {
 function showToast(message, type = 'success') {
   if (!toast) return;
   toast.textContent = message;
-  toast.className = `toast show ${type}`;
+  toast.className = `toast ${type} show`;
   setTimeout(() => toast?.classList.remove('show'), 3500);
 }
 
@@ -244,14 +245,65 @@ function initFilters() {
   filterButtons.forEach((button) => button.addEventListener('click', handleFilterClick));
 }
 
-function initContactForm() {
-  contactForm?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    showToast(`Bedankt ${name}! We sturen je binnen 24 uur een persoonlijke planning.`);
+async function submitContactForm(event) {
+  if (!contactForm) return;
+  event.preventDefault();
+
+  const formData = new FormData(contactForm);
+  const payload = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    selectedPackage: formData.get('package'),
+    message: formData.get('message'),
+  };
+
+  const originalButtonText = submitButton?.textContent;
+  submitButton?.setAttribute('disabled', 'true');
+  submitButton?.classList.add('loading');
+  if (submitButton) {
+    submitButton.textContent = 'Versturen...';
+  }
+
+  try {
+    const response = await fetch('/.netlify/functions/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      const message =
+        result?.message ||
+        'Versturen mislukt. Controleer je invoer of probeer het later opnieuw.';
+      showToast(message, 'error');
+      return;
+    }
+
+    const successMessage =
+      result?.message ||
+      `Bedankt ${payload.name}! We sturen je binnen 24 uur een persoonlijke planning.`;
+    showToast(successMessage, 'success');
     contactForm.reset();
-  });
+  } catch (error) {
+    console.error('Contactformulier verzenden mislukt', error);
+    showToast(
+      'Kon geen verbinding maken met de server. Probeer het later opnieuw of bel ons direct.',
+      'error',
+    );
+  } finally {
+    submitButton?.removeAttribute('disabled');
+    submitButton?.classList.remove('loading');
+    if (submitButton && originalButtonText) {
+      submitButton.textContent = originalButtonText;
+    }
+  }
+}
+
+function initContactForm() {
+  contactForm?.addEventListener('submit', submitContactForm);
 }
 
 function initFaq() {
