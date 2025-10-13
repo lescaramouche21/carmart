@@ -1,24 +1,23 @@
-# CarMart Suriname
+# Rijschool Studio De Vries
 
-A polished single-page marketplace experience for verified car sales in Suriname. Sellers submit their Surinamese ID for review before publishing listings, while buyers can filter vehicles and send secure messages to verified owners.
+Een moderne single-page website voor de online lesstudio van Rijschool De Vries. Leerlingen ontdekken het complete leerpad, bekijken on-demand videolessen en kunnen zich direct aanmelden voor een proefles.
 
-## Features
+## Hoogtepunten
 
-- Hero section tailored for Suriname with national colors and premium branding.
-- Verification spotlight explaining the ID approval workflow required before listing.
-- Interactive marketplace grid with price filtering and highlighted verified sellers.
-- Seller onboarding form that captures ID uploads, vehicle details, and pricing.
-- Buyer messaging form that connects interested shoppers with sellers through a secure flow.
-- Smooth scrolling navigation, responsive layout, and animated toast notifications.
+- Heldere hero-sectie met statistieken over geslaagde leerlingen en een directe call-to-action.
+- Programma-overzicht waarin de fases van het traject en live community sessies worden toegelicht.
+- Videobibliotheek met filterknoppen voor theorie-, praktijk- en examenvideo's.
+- Fotogalerij, testimonials, tarieven en een uitgebreide FAQ voor vertrouwen en duidelijkheid.
+- Aanmeldformulier met interactieve toastmelding en vloeiende smooth-scroll navigatie.
 
-## Getting started
+## Aan de slag
 
-Open `index.html` in your browser. All styling and interactivity are handled via `styles.css` and `script.js`.
+Open `index.html` in je browser om de site te bekijken. Alle styling en interactiviteit staan in `styles.css` en `script.js`.
 
-For best results, serve the site locally to ensure proper loading of external assets:
+Voor de beste ervaring kun je de site lokaal serveren zodat afbeeldingen en externe bronnen correct laden:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000).
+Bezoek daarna [http://localhost:8000](http://localhost:8000).

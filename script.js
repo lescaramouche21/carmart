@@ -1,128 +1,223 @@
-const listings = [
+const modules = [
   {
-    id: 'car-1',
-    title: 'Toyota vitz',
-    price: 121000,
-    year: 2009,
-    mileage: '200,000 km',
-    location: 'Paramaribo',
-    description:
-      'PG plaat, onderstel compleet, gearbox compleet, machine compleet.',
-    image:
-      'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
+    id: 'fase-1',
+    title: 'Fase 1 · Basis theorie',
+    focus: 'theorie',
+    duration: '1 week',
+    points: [
+      'Verkeersborden & voorrangsregels',
+      'Snel je theorie-examen plannen',
+      'Quizzen met directe feedback',
+    ],
   },
   {
-    id: 'car-2',
-    title: 'Hyundai Creta Urban',
-    price: 142000,
-    year: 2021,
-    mileage: '18,500 km',
-    location: 'Commewijne',
-    description:
-      'Compact SUV with advanced safety features and infotainment upgrades. Single owner.',
-    image:
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+    id: 'fase-2',
+    title: 'Fase 2 · Voertuigbeheersing',
+    focus: 'praktijk',
+    duration: '2 weken',
+    points: [
+      'Starten, sturen & bijzondere verrichtingen',
+      'Camerabeelden vanuit bestuurdersperspectief',
+      'Checklist voor jouw volgende praktijkrit',
+    ],
   },
   {
-    id: 'car-3',
-    title: 'Kia Sportage Signature',
-    price: 198000,
-    year: 2022,
-    mileage: '12,000 km',
-    location: 'Nickerie',
-    description:
-      'Premium package with panoramic roof, ventilated seats, and wireless CarPlay.',
-    image:
-      'https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80',
+    id: 'fase-3',
+    title: 'Fase 3 · Verkeerstechniek',
+    focus: 'praktijk',
+    duration: '2 weken',
+    points: [
+      'Inhalen, ritsen en snelwegstrategieën',
+      'Anticiperen in druk stadsverkeer',
+      'Reflectieopdrachten na elke rit',
+    ],
   },
   {
-    id: 'car-4',
-    title: 'Honda Fit Hybrid',
-    price: 98000,
-    year: 2018,
-    mileage: '55,000 km',
-    location: 'Wanica',
-    description:
-      'Fuel-efficient hatchback with hybrid technology and city-friendly size.',
-    image:
-      'https://images.unsplash.com/photo-1617813489114-11364f0d107d?auto=format&fit=crop&w=900&q=80',
+    id: 'fase-4',
+    title: 'Fase 4 · Examencoaching',
+    focus: 'examen',
+    duration: '1 week',
+    points: [
+      'Stap-voor-stap examenplanning',
+      'Voorbeelden van examenvragen & valkuilen',
+      'Mentale voorbereiding en ontspanningstechnieken',
+    ],
+  },
+  {
+    id: 'bonus',
+    title: 'Bonus · Zelfstandig oefenen',
+    focus: 'praktijk',
+    duration: 'Doorlopend',
+    points: [
+      'Downloadbare routes in Google Maps',
+      'Dagboek voor vorderingen in de auto',
+      'Extra tips voor rijden in regen en avond',
+    ],
+  },
+  {
+    id: 'community',
+    title: 'Community sessies',
+    focus: 'theorie',
+    duration: 'Iedere vrijdag',
+    points: [
+      'Live Q&A met instructeur De Vries',
+      'Bespreek lastige verkeerssituaties',
+      'Netwerk met andere leerlingen',
+    ],
   },
 ];
 
-const carGrid = document.getElementById('carGrid');
-const priceFilter = document.getElementById('priceFilter');
-const priceValue = document.getElementById('priceValue');
-const sellForm = document.getElementById('sellForm');
-const messageForm = document.getElementById('messageForm');
-const vehicleSelect = document.getElementById('vehicleSelect');
+const videos = [
+  {
+    id: 'vid-1',
+    title: 'Kijken, observeren & spiegelen',
+    type: 'praktijk',
+    length: '12:48',
+    image:
+      'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80',
+    url: 'https://www.youtube.com/watch?v=rJq7cV1JbUY',
+    summary: 'Leer hoe je actief scant en veilig van rijstrook wisselt in druk verkeer.',
+  },
+  {
+    id: 'vid-2',
+    title: 'Snelwegen zonder stress',
+    type: 'praktijk',
+    length: '09:36',
+    image:
+      'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80',
+    url: 'https://www.youtube.com/watch?v=Q3D1fLwWf0c',
+    summary: 'In- en uitvoegen, kijktechniek en snelheid kiezen aan de hand van real-life beelden.',
+  },
+  {
+    id: 'vid-3',
+    title: 'Theorie essentials: Voorrang',
+    type: 'theorie',
+    length: '14:22',
+    image:
+      'https://images.unsplash.com/photo-1533237264985-ee5053c4e159?auto=format&fit=crop&w=900&q=80',
+    url: 'https://www.youtube.com/watch?v=9h0vG96h0aY',
+    summary: 'Alle voorrangssituaties stap voor stap uitgelegd met interactieve voorbeelden.',
+  },
+  {
+    id: 'vid-4',
+    title: 'Praktijkexamen walkthrough',
+    type: 'examen',
+    length: '18:05',
+    image:
+      'https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80',
+    url: 'https://www.youtube.com/watch?v=6zBgMbdcQwM',
+    summary: 'Volg een volledige examenrit met commentaar van instructeur en examinator.',
+  },
+  {
+    id: 'vid-5',
+    title: 'Parkeren tussen twee auto\'s',
+    type: 'praktijk',
+    length: '07:51',
+    image:
+      'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
+    url: 'https://www.youtube.com/watch?v=gYQ0B47Lbyw',
+    summary: 'Stapsgewijze uitleg met bovenaanzicht en stuurbewegingen in beeld.',
+  },
+  {
+    id: 'vid-6',
+    title: 'Examentraining theorie',
+    type: 'examen',
+    length: '11:30',
+    image:
+      'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80',
+    url: 'https://www.youtube.com/watch?v=Nza5gT8QkqY',
+    summary: 'Maak een mini-proefexamen en kijk mee met de uitleg van elke vraag.',
+  },
+];
+
+const moduleGrid = document.getElementById('moduleGrid');
+const videoGrid = document.getElementById('videoGrid');
+const filterButtons = document.querySelectorAll('.filter');
+const contactForm = document.getElementById('contactForm');
 const toast = document.getElementById('toast');
 
-function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
-  const filtered = listings.filter((listing) => listing.price <= maxPrice);
-  carGrid.innerHTML = '';
-
-  filtered.forEach((listing) => {
-    const card = document.createElement('article');
-    card.className = 'card';
-    card.innerHTML = `
-      <img src="${listing.image}" alt="${listing.title}" loading="lazy" />
-      <div class="card-body">
-        <div class="card-header">
-          <h3>${listing.title}</h3>
-          <span class="badge">Verified seller</span>
-        </div>
-        <p>${listing.description}</p>
-        <div class="card-meta">
-          <span>${listing.year}</span>
-          <span>${listing.mileage}</span>
-          <span>${listing.location}</span>
-        </div>
-        <div class="card-footer">
-          <strong>SRD ${listing.price.toLocaleString()}</strong>
-          <button data-message="${listing.id}">Message seller</button>
-        </div>
-      </div>
-    `;
-    carGrid.appendChild(card);
-  });
-
-  if (filtered.length === 0) {
-    const empty = document.createElement('div');
-    empty.className = 'card';
-    empty.innerHTML = `
-      <div class="card-body">
-        <h3>No cars match your filter… yet!</h3>
-        <p>Adjust the price range or come back soon for newly verified listings.</p>
-      </div>
-    `;
-    carGrid.appendChild(empty);
-  }
-
-  updateVehicleOptions(filtered);
+function createModuleCard(module) {
+  const article = document.createElement('article');
+  article.className = 'module-card';
+  article.innerHTML = `
+    <header>
+      <h3>${module.title}</h3>
+      <span class="chip">${module.duration}</span>
+    </header>
+    <ul>
+      ${module.points.map((point) => `<li>${point}</li>`).join('')}
+    </ul>
+    <footer>
+      <span class="tag ${module.focus}">${module.focus}</span>
+    </footer>
+  `;
+  return article;
 }
 
-function updatePriceLabel(value) {
-  if (priceValue) {
-    priceValue.textContent = Number(value).toLocaleString();
+function renderModules() {
+  if (!moduleGrid) return;
+  modules.forEach((module) => moduleGrid.appendChild(createModuleCard(module)));
+}
+
+function createVideoCard(video) {
+  const article = document.createElement('article');
+  article.className = 'video-card';
+  article.innerHTML = `
+    <div class="video-thumb">
+      <img src="${video.image}" alt="${video.title}" loading="lazy" />
+      <span class="badge">${video.length}</span>
+    </div>
+    <div class="video-body">
+      <h3>${video.title}</h3>
+      <p>${video.summary}</p>
+      <div class="video-meta">
+        <span class="tag ${video.type}">${video.type}</span>
+        <a class="secondary" href="${video.url}" target="_blank" rel="noopener">Bekijk les</a>
+      </div>
+    </div>
+  `;
+  return article;
+}
+
+function renderVideos(filter = 'alle') {
+  if (!videoGrid) return;
+  videoGrid.innerHTML = '';
+
+  const filteredVideos =
+    filter === 'alle' ? videos : videos.filter((video) => video.type === filter);
+
+  filteredVideos.forEach((video) => videoGrid.appendChild(createVideoCard(video)));
+
+  if (filteredVideos.length === 0) {
+    videoGrid.innerHTML = `
+      <div class="video-empty">
+        <h3>Geen lessen in deze categorie (nog) beschikbaar.</h3>
+        <p>Laat je e-mailadres achter zodat we je een update sturen zodra er nieuwe content is.</p>
+      </div>
+    `;
   }
 }
 
-function updateVehicleOptions(listingsToShow) {
-  vehicleSelect.innerHTML = '<option value="" disabled selected>Select a vehicle</option>';
-  listingsToShow.forEach((listing) => {
-    const option = document.createElement('option');
-    option.value = listing.id;
-    option.textContent = `${listing.title} — SRD ${listing.price.toLocaleString()}`;
-    vehicleSelect.appendChild(option);
+function updateFilterState(activeFilter) {
+  filterButtons.forEach((button) => {
+    const isActive = button.dataset.filter === activeFilter;
+    button.classList.toggle('active', isActive);
+    button.setAttribute('aria-selected', String(isActive));
   });
+}
+
+function handleFilterClick(event) {
+  const button = event.currentTarget;
+  const filter = button.dataset.filter;
+  updateFilterState(filter);
+  renderVideos(filter);
 }
 
 function showToast(message, type = 'success') {
+  if (!toast) return;
   toast.textContent = message;
   toast.className = `toast show ${type}`;
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 3500);
+  setTimeout(() => toast?.classList.remove('show'), 3500);
 }
 
 function scrollToSection(selector) {
@@ -132,106 +227,62 @@ function scrollToSection(selector) {
   }
 }
 
-document.querySelectorAll('[data-scroll]').forEach((trigger) => {
-  trigger.addEventListener('click', () => scrollToSection(trigger.dataset.scroll));
-});
+function initSmoothScroll() {
+  document.querySelectorAll('[data-scroll]').forEach((trigger) => {
+    trigger.addEventListener('click', () => scrollToSection(trigger.dataset.scroll));
+  });
 
-priceFilter?.addEventListener('input', (event) => {
-  const max = Number(event.target.value);
-  updatePriceLabel(max);
-  renderListings(max);
-});
+  document.querySelectorAll('.nav-links a').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      scrollToSection(link.getAttribute('href'));
+    });
+  });
+}
 
-carGrid?.addEventListener('click', (event) => {
-  const button = event.target.closest('button[data-message]');
-  if (button) {
-    const id = button.dataset.message;
-    vehicleSelect.value = id;
-    scrollToSection('#contact');
-    showToast('Message the seller and we will deliver your note securely.');
+function initFilters() {
+  filterButtons.forEach((button) => button.addEventListener('click', handleFilterClick));
+}
+
+function initContactForm() {
+  contactForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    showToast(`Bedankt ${name}! We sturen je binnen 24 uur een persoonlijke planning.`);
+    contactForm.reset();
+  });
+}
+
+function initFaq() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach((item) => {
+    const button = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    button?.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!isExpanded));
+      answer?.classList.toggle('open', !isExpanded);
+    });
+  });
+}
+
+function setCurrentYear() {
+  const yearElement = document.getElementById('year');
+  if (yearElement) {
+    yearElement.textContent = String(new Date().getFullYear());
   }
-});
-
-sellForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const formData = new FormData(sellForm);
-
-  const newListing = {
-    id: `car-${Date.now()}`,
-    title: formData.get('model'),
-    price: Number(formData.get('price')),
-    year: Number(formData.get('year')),
-    mileage: 'New listing',
-    location: 'Pending approval',
-    description: formData.get('description'),
-    image:
-      'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
-  };
-
-  listings.unshift(newListing);
-
-  let maxForRender = Number.MAX_SAFE_INTEGER;
-
-  if (priceFilter) {
-    const currentSliderMax = Number(priceFilter.max || 0);
-    const currentSliderValue = Number(priceFilter.value || 0);
-    const shouldExpandValue = currentSliderValue >= currentSliderMax;
-
-    if (newListing.price > currentSliderMax) {
-      priceFilter.max = String(newListing.price);
-      if (shouldExpandValue) {
-        priceFilter.value = String(newListing.price);
-      }
-    }
-
-    maxForRender = Number(priceFilter.value || priceFilter.max || Number.MAX_SAFE_INTEGER);
-    updatePriceLabel(maxForRender);
-  }
-
-  renderListings(maxForRender);
-  sellForm.reset();
-  showToast('Thanks! Our verification team will review your ID shortly.');
-});
-
-messageForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const formData = new FormData(messageForm);
-  const buyerName = formData.get('buyerName');
-  const vehicleId = formData.get('vehicle');
-  const listing = listings.find((item) => item.id === vehicleId);
-
-  if (!listing) {
-    showToast('Please select a vehicle to message the seller.', 'error');
-    return;
-  }
-
-  showToast(`Message sent to ${listing.title} seller. Expect a reply soon, ${buyerName}!`);
-  messageForm.reset();
-});
+}
 
 function init() {
-  const now = new Date();
-  document.getElementById('year').textContent = now.getFullYear();
-
-  if (priceFilter) {
-    const highestPrice = listings.reduce(
-      (maxPrice, listing) => Math.max(maxPrice, listing.price),
-      0,
-    );
-
-    priceFilter.max = String(highestPrice);
-
-    if (Number(priceFilter.value || 0) > highestPrice) {
-      priceFilter.value = priceFilter.max;
-    }
-
-    const initialMax = Number(priceFilter.value || priceFilter.max || highestPrice);
-    updatePriceLabel(initialMax);
-    renderListings(initialMax);
-    return;
-  }
-
-  renderListings();
+  renderModules();
+  renderVideos();
+  initSmoothScroll();
+  initFilters();
+  initContactForm();
+  initFaq();
+  setCurrentYear();
 }
 
 init();

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carspot | Car Marketplace</title>
+    <title>Rijschool Studio De Vries</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,240 +13,308 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero" id="hero">
+    <header class="hero" id="home">
       <nav class="navbar">
-        <div class="logo">Carspot </div>
+        <div class="logo">Studio De Vries</div>
         <ul class="nav-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#verified">Verification</a></li>
-          <li><a href="#listings">Marketplace</a></li>
-          <li><a href="#sell">Sell Your Car</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#programma">Programma</a></li>
+          <li><a href="#video">Videolessen</a></li>
+          <li><a href="#tarieven">Tarieven</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="cta" data-scroll="#sell">List your car</button>
+        <button class="cta" data-scroll="#contact">Plan proefles</button>
       </nav>
       <div class="hero-content">
         <div class="hero-text">
-          <span class="flag">🇸🇷</span>
-          <h1>Suriname's most trusted car marketplace.</h1>
+          <span class="hero-label">25 jaar ervaring • familiebedrijf</span>
+          <h1>Leren rijden met vertrouwen, waar en wanneer jij wilt.</h1>
           <p>
-            Ontdek betrouwbare voertuigen van trotse eigenaars uit heel Suriname.
-            Carspot SU combineert strikte ID-controles met een vlotte en stijlvolle browse-ervaring, 
-            zodat kopers en verkopers met vertrouwen kunnen handelen.
+            Met de online studio van Rijschool De Vries volg je theorielessen, praktijkdemo's
+            en examencoaching vanuit huis. Jouw instructeur? Mijn vader – dezelfde coach die
+            al honderden leerlingen veilig door het verkeer loodste.
           </p>
           <div class="hero-actions">
-            <button class="cta" data-scroll="#listings">Browse cars</button>
-            <button class="secondary" data-scroll="#sell">Sell your car</button>
+            <button class="cta" data-scroll="#video">Bekijk lessen</button>
+            <button class="secondary" data-scroll="#programma">Hoe het werkt</button>
           </div>
+          <dl class="hero-stats">
+            <div>
+              <dt>1.280+</dt>
+              <dd>Geslaagde leerlingen</dd>
+            </div>
+            <div>
+              <dt>98%</dt>
+              <dd>Theorie slaagkans</dd>
+            </div>
+            <div>
+              <dt>3 fases</dt>
+              <dd>Van proefles tot examen</dd>
+            </div>
+          </dl>
         </div>
-        <div class="hero-highlight">
-          <div class="stat-card">
-            <h2>100%</h2>
-            <p>Verified sellers with ID approval</p>
-          </div>
-          <div class="stat-card">
-            <h2>24h</h2>
-            <p>Average approval time</p>
-          </div>
-          <div class="stat-card">
-            <h2>4.9★</h2>
-            <p>Community satisfaction</p>
+        <div class="hero-media">
+          <figure class="hero-card">
+            <img
+              src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=900&q=80"
+              alt="Instructeur legt uitleg uit bij stuur"
+              loading="lazy"
+            />
+            <figcaption>
+              Persoonlijke feedback in elke lesvideo.
+            </figcaption>
+          </figure>
+          <div class="hero-badge">
+            <span>Nieuwe release</span>
+            <strong>Digitaal praktijkpakket 2024</strong>
+            <p>12 HD video's + werkboek PDF</p>
           </div>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="credibility" id="verified">
-        <div class="credibility-content">
-          <h2>Elke verkoper wordt persoonlijk geverifieerd.</h2>
-          <p>
-            Voordat een listing live gaat, controleert ons team eerst het nationale ID van de verkoper om de echtheid te waarborgen.
-            Dankzij de regelgeving in Suriname zijn wij bevoegd om elke inzending te verifiëren 
-            — zo blijft onze marktplaats veilig en betrouwbaar.
-          </p>
-          <ul class="pillars">
-            <li>
-              <h3>Secure ID uploads</h3>
-              <p>Protected, encrypted submissions reviewed in-house.</p>
-            </li>
-            <li>
-              <h3>Personal concierge</h3>
-              <p>A dedicated specialist guides sellers from verification to sale.</p>
-            </li>
-            <li>
-              <h3>Buyer confidence</h3>
-              <p>Verified badges and transparent history on every vehicle.</p>
-            </li>
-          </ul>
-        </div>
-        <div class="credibility-badge">
-          <div class="badge-inner">
-            <span>Verified</span>
-            <strong>Carspot Certified</strong>
-            <p>Trusted in Paramaribo & beyond</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="listings" id="listings">
+      <section class="programma" id="programma">
         <div class="section-header">
-          <div>
-            <h2>Featured rides ready for the road.</h2>
-            <p>Hand-picked vehicles from approved Surinamese owners.</p>
-          </div>
-          <div class="filters">
+          <h2>Een compleet leerpad voor jouw rijbewijs B.</h2>
+          <p>
+            Het traject combineert online modules met praktijkmomenten op locatie. Zo haal je het meeste uit elke minuut in de auto.
+          </p>
+        </div>
+        <div class="programma-grid" id="moduleGrid"></div>
+      </section>
+
+      <section class="studio" id="studio">
+        <div class="section-header">
+          <h2>De online studio brengt de lesauto naar jou.</h2>
+          <p>Gebruik onze duidelijke video's, opdrachten en checklists om elke verkeerssituatie te begrijpen voordat je instapt.</p>
+        </div>
+        <div class="studio-layout">
+          <article class="studio-highlight">
+            <h3>In jouw eigen tempo</h3>
+            <p>
+              Plan lessen wanneer het jou uitkomt. De voortgangscoach zorgt dat je theorie, voertuigbeheersing en verkeersinzicht mooi in balans blijven.
+            </p>
+            <ul>
+              <li>Heldere HD-demonstraties met meerdere camerahoeken</li>
+              <li>Downloadbare samenvattingen en verkeersbordenkaarten</li>
+              <li>Korte quizzen na elke module voor directe feedback</li>
+            </ul>
+          </article>
+          <aside class="studio-media">
+            <div class="video-preview">
+              <img
+                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"
+                alt="Lesauto rijdt door stad"
+                loading="lazy"
+              />
+              <button class="play-button" data-scroll="#video">Speel voorbeeldles</button>
+            </div>
+            <div class="checklist">
+              <h4>Focus van deze week</h4>
+              <ul>
+                <li><span>✔</span> Kijken &amp; scannen in druk stadsverkeer</li>
+                <li><span>✔</span> Voorrangsregels kruispunten</li>
+                <li><span>➤</span> Parkeren achteruit tussen twee auto's</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="video-library" id="video">
+        <div class="section-header">
+          <h2>Kies een videoles en start meteen.</h2>
+          <p>Filter op theorie, praktijk of examenvoorbereiding en kijk via laptop, tablet of telefoon.</p>
+        </div>
+        <div class="video-filters" role="tablist">
+          <button class="filter active" data-filter="alle" role="tab">Alle lessen</button>
+          <button class="filter" data-filter="theorie" role="tab">Theorie</button>
+          <button class="filter" data-filter="praktijk" role="tab">Praktijk</button>
+          <button class="filter" data-filter="examen" role="tab">Examen</button>
+        </div>
+        <div class="video-grid" id="videoGrid"></div>
+      </section>
+
+      <section class="gallery" id="gallery">
+        <div class="section-header">
+          <h2>Een kijkje achter de schermen.</h2>
+          <p>Foto's uit onze lesstudio, rijroutes en geslaagde leerlingen.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80" alt="Lesauto geparkeerd bij oefenterrein" loading="lazy" />
+            <figcaption>Oefenparcours tijdens praktijkweek.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1521292270410-a8c0af2d1d7b?auto=format&fit=crop&w=900&q=80" alt="Camerasetup in studio" loading="lazy" />
+            <figcaption>Meerhoekscamera voor voertuigbeheersing.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80" alt="Leerling ontvangt sleutels" loading="lazy" />
+            <figcaption>Geslaagd! Tijd voor de eerste solo rit.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80" alt="Instructeur bespreekt theorie" loading="lazy" />
+            <figcaption>Theorieles live vanuit de studio.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="testimonials" id="ervaringen">
+        <div class="section-header">
+          <h2>Leerlingen over mijn vader als instructeur.</h2>
+        </div>
+        <div class="testimonial-grid">
+          <blockquote>
+            <p>
+              "De videolessen gaven me zoveel rust. Tijdens het rijden konden we direct oefenen wat ik de avond ervoor had gekeken."
+            </p>
+            <footer>— Aisha, geslaagd in 1 keer</footer>
+          </blockquote>
+          <blockquote>
+            <p>
+              "Alsof hij naast je zit wanneer je de theorie doornneemt. De quizzen hielpen me precies te zien waar ik nog moest bijsturen."
+            </p>
+            <footer>— Giovanni, theorie in 3 weken</footer>
+          </blockquote>
+          <blockquote>
+            <p>
+              "De examenvideo's met commentaar van de examinatoren waren goud waard. Ik herkende elke situatie tijdens het echte examen."
+            </p>
+            <footer>— Priscilla, geslaagd praktijk</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="pricing" id="tarieven">
+        <div class="section-header">
+          <h2>Tarieven &amp; pakketten</h2>
+          <p>Kies een pakket dat past bij jouw tempo. Alle online modules blijven 12 maanden beschikbaar.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Startpakket</h3>
+            <p class="price">€189</p>
+            <ul>
+              <li>10 theorielessen on-demand</li>
+              <li>4 praktijkvideo's met opdrachten</li>
+              <li>1 online voortgangsgesprek</li>
+            </ul>
+            <button class="cta full" data-scroll="#contact">Schrijf me in</button>
+          </article>
+          <article class="price-card highlight">
+            <h3>Compleet traject</h3>
+            <p class="price">€389</p>
+            <ul>
+              <li>Volledige bibliotheek (30+ video's)</li>
+              <li>Persoonlijk studieplan + checklists</li>
+              <li>2 praktijklessen op locatie inbegrepen</li>
+            </ul>
+            <button class="cta full" data-scroll="#contact">Populairst</button>
+          </article>
+          <article class="price-card">
+            <h3>Examenturbo</h3>
+            <p class="price">€129</p>
+            <ul>
+              <li>Gerichte examencoaching</li>
+              <li>6 proefexamens met feedback</li>
+              <li>Live Q&amp;A sessie met instructeur</li>
+            </ul>
+            <button class="cta full" data-scroll="#contact">Reserveer plek</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <div class="section-header">
+          <h2>Veelgestelde vragen</h2>
+        </div>
+        <div class="faq-list" id="faqList">
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Hoe werken de online lessen samen met praktijkrijden?
+            </button>
+            <div class="faq-answer">
+              <p>
+                Je start elke module met een video en opdrachten. Tijdens de volgende praktijkrit past mijn vader deze onderdelen direct toe. Zo ben je goed voorbereid en blijven de lessen betaalbaar.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">Kan ik de video's op mijn telefoon bekijken?</button>
+            <div class="faq-answer">
+              <p>
+                Zeker! Alle lessen zijn geoptimaliseerd voor mobiel. Je kunt pauzeren, terugspoelen en verder kijken op een ander device dankzij onze voortgangstracker.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">Hoe snel krijg ik toegang?</button>
+            <div class="faq-answer">
+              <p>
+                Binnen één werkdag na inschrijving ontvang je jouw inloggegevens en startpakket. De eerstvolgende praktijkles plannen we direct samen in.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="section-header">
+          <h2>Plan je eerste (online) les.</h2>
+          <p>Laat je gegevens achter en ik stuur je binnen 24 uur de toegang tot de online leeromgeving.</p>
+        </div>
+        <div class="contact-layout">
+          <form class="contact-form" id="contactForm">
             <label>
-              <span>Filter by price (SRD)</span>
-              <input type="range" id="priceFilter" min="0" max="250000" value="250000" />
+              Naam
+              <input type="text" name="name" placeholder="Voor- en achternaam" required />
             </label>
-            <span class="price-value">Up to SRD <strong id="priceValue">250,000</strong></span>
-          </div>
+            <label>
+              E-mail
+              <input type="email" name="email" placeholder="jij@example.com" required />
+            </label>
+            <label>
+              Telefoon
+              <input type="tel" name="phone" placeholder="06 12345678" required />
+            </label>
+            <label>
+              Gewenst pakket
+              <select name="package" required>
+                <option value="" disabled selected>Kies een pakket</option>
+                <option value="start">Startpakket</option>
+                <option value="compleet">Compleet traject</option>
+                <option value="examen">Examenturbo</option>
+              </select>
+            </label>
+            <label>
+              Bericht
+              <textarea name="message" rows="4" placeholder="Vertel waar je hulp bij wilt"></textarea>
+            </label>
+            <button class="cta full" type="submit">Verstuur</button>
+          </form>
+          <aside class="contact-info">
+            <h3>Direct contact</h3>
+            <p>
+              Bel of stuur een appje naar <strong>+31 6 1234 5678</strong>. We rijden vanuit regio Utrecht, maar online lessen zijn beschikbaar voor heel Nederland.
+            </p>
+            <ul>
+              <li><span>📍</span> Oefenlocaties: Utrecht, Nieuwegein, Houten</li>
+              <li><span>🕒</span> Online bereikbaar: ma–za, 08:00 – 21:00</li>
+              <li><span>🎥</span> Nieuwe video's iedere maandag</li>
+            </ul>
+          </aside>
         </div>
-        <div class="cards" id="carGrid"></div>
-      </section>
-
-      <section class="sell" id="sell">
-        <div class="sell-intro">
-          <h2>Ready to sell? Start with ID verification.</h2>
-          <p>
-            Submit your Surinamese ID for a swift review. Once approved, your
-            listing goes live across the country within minutes. Expect a member
-            of the CarMart concierge team to follow up and help you craft the
-            perfect listing.
-          </p>
-          <div class="steps">
-            <div class="step">
-              <span>01</span>
-              <h3>Submit ID</h3>
-              <p>Upload a clear photo of your national ID for approval.</p>
-            </div>
-            <div class="step">
-              <span>02</span>
-              <h3>Create listing</h3>
-              <p>Share your car's details, photos, and desired price.</p>
-            </div>
-            <div class="step">
-              <span>03</span>
-              <h3>Connect with buyers</h3>
-              <p>Receive secure messages directly from interested buyers.</p>
-            </div>
-          </div>
-        </div>
-        <form class="sell-form" id="sellForm">
-          <h3>List your vehicle</h3>
-          <label>
-            Full name
-            <input type="text" name="name" placeholder="Your full name" required />
-          </label>
-          <label>
-            Email address
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
-          <label>
-            Phone number
-            <input type="tel" name="phone" placeholder="(+597) 000-0000" required />
-          </label>
-          <label>
-            ID document (front)
-            <input type="file" name="idFront" accept="image/*,application/pdf" required />
-          </label>
-          <label>
-            ID document (back)
-            <input type="file" name="idBack" accept="image/*,application/pdf" required />
-          </label>
-          <label>
-            Vehicle make & model
-            <input type="text" name="model" placeholder="Toyota Hilux" required />
-          </label>
-          <label>
-            Year
-            <input type="number" name="year" min="1980" max="2030" required />
-          </label>
-          <label>
-            Price (SRD)
-            <input type="number" name="price" min="0" step="500" required />
-          </label>
-          <label>
-            Description
-            <textarea name="description" rows="4" placeholder="Tell buyers why this ride is special" required></textarea>
-          </label>
-          <label>
-            Upload car photos
-            <input type="file" name="photos" accept="image/*" multiple />
-          </label>
-          <button type="submit" class="cta full">Submit for verification</button>
-          <p class="form-disclaimer">
-            By submitting, you authorize CarMart Suriname to review your ID in
-            compliance with Surinamese regulations. Your data remains encrypted
-            and never leaves our secure servers.
-          </p>
-        </form>
-      </section>
-
-      <section class="message" id="contact">
-        <div class="message-info">
-          <h2>Buyers can message sellers instantly.</h2>
-          <p>
-            Interested in a vehicle? Send a secure message to the seller and our
-            system notifies them while masking your private contact details until
-            they respond.
-          </p>
-          <ul class="message-highlights">
-            <li>Built-in translation support for Dutch & Sranan Tongo.</li>
-            <li>Automatic safety screening of every message.</li>
-            <li>Reply from any device without sharing your number.</li>
-          </ul>
-        </div>
-        <form class="message-form" id="messageForm">
-          <h3>Message a seller</h3>
-          <label>
-            Your name
-            <input type="text" name="buyerName" placeholder="Your name" required />
-          </label>
-          <label>
-            Your email
-            <input type="email" name="buyerEmail" placeholder="you@example.com" required />
-          </label>
-          <label>
-            Select a vehicle
-            <select name="vehicle" id="vehicleSelect" required></select>
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="4" placeholder="Hi! I'm interested in taking a look." required></textarea>
-          </label>
-          <button type="submit" class="cta full">Send secure message</button>
-          <p class="form-disclaimer">We deliver your message to the verified seller.</p>
-        </form>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>
-          <h3>CarMart Suriname</h3>
-          <p>
-            The definitive marketplace for trusted car sales across Suriname.
-            Built locally for our community.
-          </p>
-        </div>
-        <div>
-          <h4>Visit us</h4>
-          <p>Hendrikstraat 12, Paramaribo</p>
-          <p>Mon – Sat: 9:00 – 18:00</p>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <a href="mailto:hello@carmartsr.com">hello@carmartsr.com</a>
-          <a href="tel:+5971234567">(+597) 123-4567</a>
-        </div>
-      </div>
-      <p class="footer-note">© <span id="year"></span> CarMart Suriname. All rights reserved.</p>
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Rijschool Studio De Vries. Alle rechten voorbehouden.</p>
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
