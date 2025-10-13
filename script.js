@@ -60,7 +60,7 @@ const modules = [
     focus: 'theorie',
     duration: 'Iedere vrijdag',
     points: [
-      'Live Q&A met instructeur De Vries',
+      'Live Q&A met instructeur van Rijschool Climax',
       'Bespreek lastige verkeerssituaties',
       'Netwerk met andere leerlingen',
     ],

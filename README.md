@@ -1,6 +1,6 @@
-# Rijschool Studio De Vries
+# Rijschool Climax
 
-Een moderne single-page website voor de online lesstudio van Rijschool De Vries. Leerlingen ontdekken het complete leerpad, bekijken on-demand videolessen en kunnen zich direct aanmelden voor een proefles.
+Een moderne single-page website voor de online lesstudio van Rijschool Climax. Leerlingen ontdekken het complete leerpad, bekijken on-demand videolessen en kunnen zich direct aanmelden voor een proefles.
 
 ## Hoogtepunten
 
