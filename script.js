@@ -160,9 +160,9 @@ function renderModules() {
   modules.forEach((module) => moduleGrid.appendChild(createModuleCard(module)));
 }
 
-function createVideoCard(video) {
+function createVideoCard(video, isFeatured = false) {
   const article = document.createElement('article');
-  article.className = 'video-card';
+  article.className = `video-card${isFeatured ? ' featured' : ''}`;
   article.innerHTML = `
     <div class="video-thumb">
       <img src="${video.image}" alt="${video.title}" loading="lazy" />
@@ -187,7 +187,9 @@ function renderVideos(filter = 'alle') {
   const filteredVideos =
     filter === 'alle' ? videos : videos.filter((video) => video.type === filter);
 
-  filteredVideos.forEach((video) => videoGrid.appendChild(createVideoCard(video)));
+  filteredVideos.forEach((video, index) =>
+    videoGrid.appendChild(createVideoCard(video, index === 0))
+  );
 
   if (filteredVideos.length === 0) {
     videoGrid.innerHTML = `
