@@ -73,6 +73,7 @@ const videos = [
     title: 'Kijken, observeren & spiegelen in Paramaribo',
     type: 'praktijk',
     length: '12:48',
+    isLive: true,
     image:
       'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80',
     url: 'https://www.youtube.com/watch?v=rJq7cV1JbUY',
@@ -136,6 +137,7 @@ const filterButtons = document.querySelectorAll('.filter');
 const contactForm = document.getElementById('contactForm');
 const toast = document.getElementById('toast');
 const submitButton = contactForm?.querySelector('button[type="submit"]');
+const liveStatus = document.getElementById('liveStatus');
 
 function createModuleCard(module) {
   const article = document.createElement('article');
@@ -166,6 +168,11 @@ function createVideoCard(video, isFeatured = false) {
   article.innerHTML = `
     <div class="video-thumb">
       <img src="${video.image}" alt="${video.title}" loading="lazy" />
+      ${
+        video.isLive
+          ? '<span class="live-pill" aria-label="Live les">Live les</span>'
+          : ''
+      }
       <span class="badge">${video.length}</span>
     </div>
     <div class="video-body">
@@ -184,12 +191,21 @@ function renderVideos(filter = 'alle') {
   if (!videoGrid) return;
   videoGrid.innerHTML = '';
 
+  updateLiveStatus();
+
   const filteredVideos =
     filter === 'alle' ? videos : videos.filter((video) => video.type === filter);
 
-  filteredVideos.forEach((video, index) =>
-    videoGrid.appendChild(createVideoCard(video, index === 0))
-  );
+  const liveVideo = filteredVideos.find((video) => video.isLive);
+
+  if (liveVideo) {
+    videoGrid.appendChild(createVideoCard(liveVideo, true));
+  }
+
+  filteredVideos.forEach((video) => {
+    if (liveVideo && video.id === liveVideo.id) return;
+    videoGrid.appendChild(createVideoCard(video));
+  });
 
   if (filteredVideos.length === 0) {
     videoGrid.innerHTML = `
@@ -199,6 +215,15 @@ function renderVideos(filter = 'alle') {
       </div>
     `;
   }
+}
+
+function updateLiveStatus() {
+  if (!liveStatus) return;
+  const hasLive = videos.some((video) => video.isLive);
+  liveStatus.textContent = hasLive
+    ? 'Live les nu bezig'
+    : 'Momenteel geen live lessen';
+  liveStatus.className = `live-status ${hasLive ? 'active' : 'inactive'}`;
 }
 
 function updateFilterState(activeFilter) {
