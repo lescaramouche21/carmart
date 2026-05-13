@@ -1,51 +1,42 @@
 const listings = [
   {
-    id: 'car-1',
-    title: 'Toyota vitz',
-    price: 121000,
-    year: 2009,
-    mileage: '200,000 km',
+    id: 'listing-1',
+    type: 'car-sale',
+    typeLabel: 'Car Sale',
+    title: 'Toyota Vitz 2018',
+    price: 9200,
+    year: 2018,
+    mileage: '62,000 km',
     location: 'Paramaribo',
-    description:
-      'PG plaat, onderstel compleet, gearbox compleet, machine compleet.',
+    description: 'Well-maintained compact car with cold A/C and clean interior.',
     image:
       'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
   },
   {
-    id: 'car-2',
-    title: 'Hyundai Creta Urban',
-    price: 142000,
+    id: 'listing-2',
+    type: 'car-rent',
+    typeLabel: 'Car Rental',
+    title: 'Hyundai Creta (Daily Rental)',
+    price: 70,
     year: 2021,
-    mileage: '18,500 km',
-    location: 'Commewijne',
-    description:
-      'Compact SUV with advanced safety features and infotainment upgrades. Single owner.',
+    mileage: 'On request',
+    location: 'Wanica',
+    description: 'Comfort SUV available daily/weekly with insurance options.',
     image:
       'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
   },
   {
-    id: 'car-3',
-    title: 'Kia Sportage Signature',
-    price: 198000,
-    year: 2022,
-    mileage: '12,000 km',
-    location: 'Nickerie',
-    description:
-      'Premium package with panoramic roof, ventilated seats, and wireless CarPlay.',
+    id: 'listing-3',
+    type: 'house-rent',
+    typeLabel: 'House Rental',
+    title: '2BR Apartment Near City Center',
+    price: 850,
+    year: 2023,
+    mileage: 'N/A',
+    location: 'Paramaribo',
+    description: 'Modern apartment with parking, fiber internet, and balcony.',
     image:
-      'https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 'car-4',
-    title: 'Honda Fit Hybrid',
-    price: 98000,
-    year: 2018,
-    mileage: '55,000 km',
-    location: 'Wanica',
-    description:
-      'Fuel-efficient hatchback with hybrid technology and city-friendly size.',
-    image:
-      'https://images.unsplash.com/photo-1617813489114-11364f0d107d?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80',
   },
 ];
 
@@ -69,17 +60,17 @@ function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
       <div class="card-body">
         <div class="card-header">
           <h3>${listing.title}</h3>
-          <span class="badge">Verified seller</span>
+          <span class="badge">${listing.typeLabel}</span>
         </div>
         <p>${listing.description}</p>
         <div class="card-meta">
-          <span>${listing.year}</span>
+          <span>${listing.year || 'N/A'}</span>
           <span>${listing.mileage}</span>
           <span>${listing.location}</span>
         </div>
         <div class="card-footer">
-          <strong>SRD ${listing.price.toLocaleString()}</strong>
-          <button data-message="${listing.id}">Message seller</button>
+          <strong>$${listing.price.toLocaleString()}</strong>
+          <button data-message="${listing.id}">Message lister</button>
         </div>
       </div>
     `;
@@ -91,8 +82,8 @@ function renderListings(maxPrice = Number.MAX_SAFE_INTEGER) {
     empty.className = 'card';
     empty.innerHTML = `
       <div class="card-body">
-        <h3>No cars match your filter… yet!</h3>
-        <p>Adjust the price range or come back soon for newly verified listings.</p>
+        <h3>No listings match your filter yet.</h3>
+        <p>Adjust price or check back soon for new Classe X posts.</p>
       </div>
     `;
     carGrid.appendChild(empty);
@@ -108,11 +99,11 @@ function updatePriceLabel(value) {
 }
 
 function updateVehicleOptions(listingsToShow) {
-  vehicleSelect.innerHTML = '<option value="" disabled selected>Select a vehicle</option>';
+  vehicleSelect.innerHTML = '<option value="" disabled selected>Select a listing</option>';
   listingsToShow.forEach((listing) => {
     const option = document.createElement('option');
     option.value = listing.id;
-    option.textContent = `${listing.title} — SRD ${listing.price.toLocaleString()}`;
+    option.textContent = `${listing.typeLabel}: ${listing.title} — $${listing.price.toLocaleString()}`;
     vehicleSelect.appendChild(option);
   });
 }
@@ -148,70 +139,69 @@ carGrid?.addEventListener('click', (event) => {
     const id = button.dataset.message;
     vehicleSelect.value = id;
     scrollToSection('#contact');
-    showToast('Message the seller and we will deliver your note securely.');
+    showToast('Send your message and the lister will be notified.');
   }
 });
 
 sellForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(sellForm);
+  const listingType = formData.get('listingType');
+
+  const typeLabels = {
+    'car-sale': 'Car Sale',
+    'car-rent': 'Car Rental',
+    'house-rent': 'House Rental',
+  };
 
   const newListing = {
-    id: `car-${Date.now()}`,
+    id: `listing-${Date.now()}`,
+    type: listingType,
+    typeLabel: typeLabels[listingType] || 'Listing',
     title: formData.get('model'),
     price: Number(formData.get('price')),
-    year: Number(formData.get('year')),
-    mileage: 'New listing',
-    location: 'Pending approval',
+    year: Number(formData.get('year')) || null,
+    mileage: listingType === 'house-rent' ? 'N/A' : 'New listing',
+    location: formData.get('location') || 'Pending review',
     description: formData.get('description'),
     image:
-      'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
+      listingType === 'house-rent'
+        ? 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80'
+        : 'https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80',
   };
 
   listings.unshift(newListing);
 
-  let maxForRender = Number.MAX_SAFE_INTEGER;
-
-  if (priceFilter) {
-    const currentSliderMax = Number(priceFilter.max || 0);
-    const currentSliderValue = Number(priceFilter.value || 0);
-    const shouldExpandValue = currentSliderValue >= currentSliderMax;
-
-    if (newListing.price > currentSliderMax) {
-      priceFilter.max = String(newListing.price);
-      if (shouldExpandValue) {
-        priceFilter.value = String(newListing.price);
-      }
-    }
-
-    maxForRender = Number(priceFilter.value || priceFilter.max || Number.MAX_SAFE_INTEGER);
-    updatePriceLabel(maxForRender);
+  if (priceFilter && newListing.price > Number(priceFilter.max || 0)) {
+    priceFilter.max = String(newListing.price);
+    priceFilter.value = String(newListing.price);
   }
 
+  const maxForRender = Number(priceFilter?.value || Number.MAX_SAFE_INTEGER);
+  updatePriceLabel(maxForRender);
   renderListings(maxForRender);
   sellForm.reset();
-  showToast('Thanks! Our verification team will review your ID shortly.');
+  showToast('Listing published on Classe X successfully!');
 });
 
 messageForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(messageForm);
   const buyerName = formData.get('buyerName');
-  const vehicleId = formData.get('vehicle');
-  const listing = listings.find((item) => item.id === vehicleId);
+  const listingId = formData.get('vehicle');
+  const listing = listings.find((item) => item.id === listingId);
 
   if (!listing) {
-    showToast('Please select a vehicle to message the seller.', 'error');
+    showToast('Please select a listing before sending your inquiry.', 'error');
     return;
   }
 
-  showToast(`Message sent to ${listing.title} seller. Expect a reply soon, ${buyerName}!`);
+  showToast(`Message sent for ${listing.title}. Thanks, ${buyerName}!`);
   messageForm.reset();
 });
 
 function init() {
-  const now = new Date();
-  document.getElementById('year').textContent = now.getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
 
   if (priceFilter) {
     const highestPrice = listings.reduce(
@@ -220,12 +210,9 @@ function init() {
     );
 
     priceFilter.max = String(highestPrice);
+    priceFilter.value = String(highestPrice);
 
-    if (Number(priceFilter.value || 0) > highestPrice) {
-      priceFilter.value = priceFilter.max;
-    }
-
-    const initialMax = Number(priceFilter.value || priceFilter.max || highestPrice);
+    const initialMax = Number(priceFilter.value || highestPrice);
     updatePriceLabel(initialMax);
     renderListings(initialMax);
     return;
