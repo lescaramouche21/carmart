@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carspot | Car Marketplace</title>
+    <title>Classe X | Car Sale, Car Rental & Home Rental Marketplace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,42 +15,40 @@
   <body>
     <header class="hero" id="hero">
       <nav class="navbar">
-        <div class="logo">Carspot </div>
+        <div class="logo">Classe X</div>
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
-          <li><a href="#verified">Verification</a></li>
+          <li><a href="#verified">Trust & Safety</a></li>
           <li><a href="#listings">Marketplace</a></li>
-          <li><a href="#sell">Sell Your Car</a></li>
+          <li><a href="#sell">Post Listing</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="cta" data-scroll="#sell">List your car</button>
+        <button class="cta" data-scroll="#sell">Post now</button>
       </nav>
       <div class="hero-content">
         <div class="hero-text">
-          <span class="flag">🇸🇷</span>
-          <h1>Suriname's most trusted car marketplace.</h1>
+          <h1>Your marketplace for car sales, car rentals, and house rentals.</h1>
           <p>
-            Ontdek betrouwbare voertuigen van trotse eigenaars uit heel Suriname.
-            Carspot SU combineert strikte ID-controles met een vlotte en stijlvolle browse-ervaring, 
-            zodat kopers en verkopers met vertrouwen kunnen handelen.
+            Classe X connects people who want to buy cars, rent cars, or rent homes
+            in one premium, easy-to-use experience.
           </p>
           <div class="hero-actions">
-            <button class="cta" data-scroll="#listings">Browse cars</button>
-            <button class="secondary" data-scroll="#sell">Sell your car</button>
+            <button class="cta" data-scroll="#listings">Browse listings</button>
+            <button class="secondary" data-scroll="#sell">Create listing</button>
           </div>
         </div>
         <div class="hero-highlight">
           <div class="stat-card">
-            <h2>100%</h2>
-            <p>Verified sellers with ID approval</p>
+            <h2>3-in-1</h2>
+            <p>Cars for sale, cars for rent, homes for rent</p>
           </div>
           <div class="stat-card">
-            <h2>24h</h2>
-            <p>Average approval time</p>
+            <h2>24/7</h2>
+            <p>Live marketplace access</p>
           </div>
           <div class="stat-card">
-            <h2>4.9★</h2>
-            <p>Community satisfaction</p>
+            <h2>Fast</h2>
+            <p>Message listers instantly</p>
           </div>
         </div>
       </div>
@@ -59,32 +57,31 @@
     <main>
       <section class="credibility" id="verified">
         <div class="credibility-content">
-          <h2>Elke verkoper wordt persoonlijk geverifieerd.</h2>
+          <h2>Built for secure deals and smooth rentals.</h2>
           <p>
-            Voordat een listing live gaat, controleert ons team eerst het nationale ID van de verkoper om de echtheid te waarborgen.
-            Dankzij de regelgeving in Suriname zijn wij bevoegd om elke inzending te verifiëren 
-            — zo blijft onze marktplaats veilig en betrouwbaar.
+            Every listing on Classe X follows a trust workflow with profile checks,
+            fraud screening, and clear listing details for buyers and renters.
           </p>
           <ul class="pillars">
             <li>
-              <h3>Secure ID uploads</h3>
-              <p>Protected, encrypted submissions reviewed in-house.</p>
+              <h3>Verified profiles</h3>
+              <p>Listers are reviewed before listings are featured.</p>
             </li>
             <li>
-              <h3>Personal concierge</h3>
-              <p>A dedicated specialist guides sellers from verification to sale.</p>
+              <h3>Clear listing types</h3>
+              <p>Instantly see if it is a car sale, car rental, or house rental.</p>
             </li>
             <li>
-              <h3>Buyer confidence</h3>
-              <p>Verified badges and transparent history on every vehicle.</p>
+              <h3>Secure messaging</h3>
+              <p>Communicate safely before sharing direct contact details.</p>
             </li>
           </ul>
         </div>
         <div class="credibility-badge">
           <div class="badge-inner">
             <span>Verified</span>
-            <strong>Carspot Certified</strong>
-            <p>Trusted in Paramaribo & beyond</p>
+            <strong>Classe X Trusted</strong>
+            <p>Marketplace confidence by design</p>
           </div>
         </div>
       </section>
@@ -92,15 +89,15 @@
       <section class="listings" id="listings">
         <div class="section-header">
           <div>
-            <h2>Featured rides ready for the road.</h2>
-            <p>Hand-picked vehicles from approved Surinamese owners.</p>
+            <h2>Featured listings on Classe X.</h2>
+            <p>Explore all categories in one place.</p>
           </div>
           <div class="filters">
             <label>
-              <span>Filter by price (SRD)</span>
-              <input type="range" id="priceFilter" min="0" max="250000" value="250000" />
+              <span>Filter by max price (USD)</span>
+              <input type="range" id="priceFilter" min="0" max="3000" value="3000" />
             </label>
-            <span class="price-value">Up to SRD <strong id="priceValue">250,000</strong></span>
+            <span class="price-value">Up to $<strong id="priceValue">3,000</strong></span>
           </div>
         </div>
         <div class="cards" id="carGrid"></div>
@@ -108,33 +105,31 @@
 
       <section class="sell" id="sell">
         <div class="sell-intro">
-          <h2>Ready to sell? Start with ID verification.</h2>
+          <h2>Create a listing in minutes.</h2>
           <p>
-            Submit your Surinamese ID for a swift review. Once approved, your
-            listing goes live across the country within minutes. Expect a member
-            of the CarMart concierge team to follow up and help you craft the
-            perfect listing.
+            Whether you are selling a car, renting out a vehicle, or listing a
+            home for rent, Classe X helps you publish quickly.
           </p>
           <div class="steps">
             <div class="step">
               <span>01</span>
-              <h3>Submit ID</h3>
-              <p>Upload a clear photo of your national ID for approval.</p>
+              <h3>Choose listing type</h3>
+              <p>Pick car sale, car rental, or house rental.</p>
             </div>
             <div class="step">
               <span>02</span>
-              <h3>Create listing</h3>
-              <p>Share your car's details, photos, and desired price.</p>
+              <h3>Add listing details</h3>
+              <p>Share title, price, location, and description.</p>
             </div>
             <div class="step">
               <span>03</span>
-              <h3>Connect with buyers</h3>
-              <p>Receive secure messages directly from interested buyers.</p>
+              <h3>Get inquiries</h3>
+              <p>Receive secure messages from interested buyers and renters.</p>
             </div>
           </div>
         </div>
         <form class="sell-form" id="sellForm">
-          <h3>List your vehicle</h3>
+          <h3>Post your listing</h3>
           <label>
             Full name
             <input type="text" name="name" placeholder="Your full name" required />
@@ -144,62 +139,47 @@
             <input type="email" name="email" placeholder="you@example.com" required />
           </label>
           <label>
-            Phone number
-            <input type="tel" name="phone" placeholder="(+597) 000-0000" required />
+            Listing type
+            <select name="listingType" required>
+              <option value="car-sale">Car Sale</option>
+              <option value="car-rent">Car Rental</option>
+              <option value="house-rent">House Rental</option>
+            </select>
           </label>
           <label>
-            ID document (front)
-            <input type="file" name="idFront" accept="image/*,application/pdf" required />
+            Listing title
+            <input type="text" name="model" placeholder="e.g., Toyota Corolla 2020 / 2BR Apartment Downtown" required />
           </label>
           <label>
-            ID document (back)
-            <input type="file" name="idBack" accept="image/*,application/pdf" required />
+            Year (cars only)
+            <input type="number" name="year" min="1900" max="2035" />
           </label>
           <label>
-            Vehicle make & model
-            <input type="text" name="model" placeholder="Toyota Hilux" required />
+            Price
+            <input type="number" name="price" min="0" step="50" required />
           </label>
           <label>
-            Year
-            <input type="number" name="year" min="1980" max="2030" required />
-          </label>
-          <label>
-            Price (SRD)
-            <input type="number" name="price" min="0" step="500" required />
+            Location
+            <input type="text" name="location" placeholder="City / District" required />
           </label>
           <label>
             Description
-            <textarea name="description" rows="4" placeholder="Tell buyers why this ride is special" required></textarea>
+            <textarea name="description" rows="4" placeholder="Tell buyers/renters about this listing" required></textarea>
           </label>
-          <label>
-            Upload car photos
-            <input type="file" name="photos" accept="image/*" multiple />
-          </label>
-          <button type="submit" class="cta full">Submit for verification</button>
-          <p class="form-disclaimer">
-            By submitting, you authorize CarMart Suriname to review your ID in
-            compliance with Surinamese regulations. Your data remains encrypted
-            and never leaves our secure servers.
-          </p>
+          <button type="submit" class="cta full">Publish listing</button>
         </form>
       </section>
 
       <section class="message" id="contact">
         <div class="message-info">
-          <h2>Buyers can message sellers instantly.</h2>
+          <h2>Interested? Message the lister instantly.</h2>
           <p>
-            Interested in a vehicle? Send a secure message to the seller and our
-            system notifies them while masking your private contact details until
-            they respond.
+            Use secure messaging to ask questions, schedule inspections, or request
+            rental availability.
           </p>
-          <ul class="message-highlights">
-            <li>Built-in translation support for Dutch & Sranan Tongo.</li>
-            <li>Automatic safety screening of every message.</li>
-            <li>Reply from any device without sharing your number.</li>
-          </ul>
         </div>
         <form class="message-form" id="messageForm">
-          <h3>Message a seller</h3>
+          <h3>Send inquiry</h3>
           <label>
             Your name
             <input type="text" name="buyerName" placeholder="Your name" required />
@@ -209,15 +189,14 @@
             <input type="email" name="buyerEmail" placeholder="you@example.com" required />
           </label>
           <label>
-            Select a vehicle
+            Select a listing
             <select name="vehicle" id="vehicleSelect" required></select>
           </label>
           <label>
             Message
-            <textarea name="message" rows="4" placeholder="Hi! I'm interested in taking a look." required></textarea>
+            <textarea name="message" rows="4" placeholder="Hi, I'm interested in this listing." required></textarea>
           </label>
           <button type="submit" class="cta full">Send secure message</button>
-          <p class="form-disclaimer">We deliver your message to the verified seller.</p>
         </form>
       </section>
     </main>
@@ -225,24 +204,11 @@
     <footer class="footer">
       <div class="footer-inner">
         <div>
-          <h3>CarMart Suriname</h3>
-          <p>
-            The definitive marketplace for trusted car sales across Suriname.
-            Built locally for our community.
-          </p>
-        </div>
-        <div>
-          <h4>Visit us</h4>
-          <p>Hendrikstraat 12, Paramaribo</p>
-          <p>Mon – Sat: 9:00 – 18:00</p>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <a href="mailto:hello@carmartsr.com">hello@carmartsr.com</a>
-          <a href="tel:+5971234567">(+597) 123-4567</a>
+          <h3>Classe X</h3>
+          <p>One destination for car sales, car rentals, and home rentals.</p>
         </div>
       </div>
-      <p class="footer-note">© <span id="year"></span> CarMart Suriname. All rights reserved.</p>
+      <p class="footer-note">© <span id="year"></span> Classe X. All rights reserved.</p>
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
